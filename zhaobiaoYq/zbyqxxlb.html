@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link href="../css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/ljpublic.css">
+    <style>
+
+    </style>
+</head>
+
+<body class="lj-search-con lj-zbyq-con">
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+        <a class="mui-control-item mui-active" href="#item1mobile">
+            <span>招投标</span>
+        </a>
+        <a class="mui-control-item" href="#item2mobile">
+            <span>舆情</span>
+        </a>
+    </div>
+</header>
+<div class="mui-content bcWhite">
+    <div class="rec-manus-box">
+        <div id="slider" class="mui-slider mui-fullscreen">
+            <div class="mui-slider-group">
+                <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+                    <!--搜索输入框-->
+                    <div class="search-input-box" style="padding: 10px;background-color: transparent;">
+                        <a href="zbSearch.html" class="search-inner mui-input-row" style="line-height: 38px;">
+                            <span class="iconfont icon-search"></span>
+                            <input type="text" placeholder="请输入搜索关键词" readonly class="mui-input-clear" style="border: 0;">
+                        </a>
+                    </div>
+                    <!--搜索输入框 end-->
+                    <div id="scroll1" class="mui-scroll-wrapper" style="top: 50px;">
+                        <div class="mui-scroll">
+                            <ul class="ztbinfolist">
+                                <li class="ztb-licell">
+                                    <a href="ggxx.html" class="ztb-link">
+                                        <span class="iconfont icon-bell"></span>
+                                        <span>中国科学技术大学附属第一医院（安徽省立医院）南区结果公示</span>
+                                    </a>
+                                    <div class="ztb-bt-infos clearfix">
+                                        <div class="ztb-left-time fl">
+                                            <span class="iconfont icon-time"></span>
+                                            <span>06-28 18:45</span>
+                                        </div>
+                                        <div class="right-labels fr clearfix">
+                                            <span class="fr yellow-label">运维服务</span>
+                                            <span class="fr blue-label">中标</span>
+                                            <span class="fr green-label">浙江</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="ztb-licell">
+                                    <a href="ggxx.html" class="ztb-link">
+                                        <span class="iconfont icon-bell"></span>
+                                        <span>中国科学技术大学附属第一医院（安徽省立医院）南区结果公示</span>
+                                    </a>
+                                    <div class="ztb-bt-infos clearfix">
+                                        <div class="ztb-left-time fl">
+                                            <span class="iconfont icon-time"></span>
+                                            <span>06-28 18:45</span>
+                                        </div>
+                                        <div class="right-labels fr clearfix">
+                                            <span class="fr yellow-label">运维服务</span>
+                                            <span class="fr blue-label">中标</span>
+                                            <span class="fr green-label">浙江</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="ztb-licell">
+                                    <a href="ggxx.html" class="ztb-link">
+                                        <span class="iconfont icon-bell"></span>
+                                        <span>中国科学技术大学附属第一医院（安徽省立医院）南区结果公示</span>
+                                    </a>
+                                    <div class="ztb-bt-infos clearfix">
+                                        <div class="ztb-left-time fl">
+                                            <span class="iconfont icon-time"></span>
+                                            <span>06-28 18:45</span>
+                                        </div>
+                                        <div class="right-labels fr clearfix">
+                                            <span class="fr yellow-label">运维服务</span>
+                                            <span class="fr blue-label">中标</span>
+                                            <span class="fr green-label">浙江</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="item2mobile" class="mui-slider-item mui-control-content">
+                    <div id="scroll2" class="mui-scroll-wrapper">
+                        <div class="mui-scroll">
+                            <ul class="ztbinfolist">
+                                <li class="ztb-licell">
+                                    <a href="" class="ztb-link">
+                                        <span class="iconfont icon-bell"></span>
+                                        <span>宝盈新价值灵活配置混合型证券投资基金更新招募说明书摘要</span>
+                                    </a>
+                                    <div class="ztb-bt-infos clearfix">
+                                        <div class="ztb-left-time fl">
+                                            <span class="iconfont icon-time"></span>
+                                            <span>06-28 18:45</span>
+                                        </div>
+                                        <div class="right-labels fr clearfix">
+                                            <span class="fr red-label">平安银行</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="../js/mui.min.js"></script>
+
+<script src="../js/app.js"></script>
+<script>
+    mui.init();
+    mui('.mui-scroll-wrapper').scroll({
+        bounce: true,//滚动条是否有弹力默认是true
+        indicators: true //是否显示滚动条
+    });
+    document.querySelector('.mui-slider').addEventListener('slide', function(event) {
+        var index = event.detail.slideNumber;
+        mui('.mui-control-item')[0].classList.remove('mui-active');
+        mui('.mui-control-item')[1].classList.remove('mui-active');
+        mui('.mui-control-item')[index].classList.add('mui-active');
+    });
+</script>
+</body>
+
+</html>

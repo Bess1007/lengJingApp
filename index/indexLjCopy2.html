@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow: hidden">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="../iconfont/iconfont.css" />
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/zxapp.css">
+    <link rel="stylesheet" type="text/css" href="../css/ljapp.css" />
+    <link rel="stylesheet" type="text/css" href="../css/ljpublic.css" />
+    <style type="text/css">
+        .mui-scroll-wrapper {
+            display: -webkit-box;
+        }
+
+        .mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+            border: none;
+        }
+
+        .mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+            border-bottom: 3px solid #5084EF;
+            color: #5084EF;
+        }
+        .mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+            border-bottom: 3px solid #fff;
+        }
+        .mui-slider-indicator.mui-segmented-control {
+            margin-bottom: 5px;
+        }
+
+        .companyNewsCell {
+            padding: 10px 20px;
+            padding-left: 25px;
+            margin-bottom: 5px;
+            background-color: #fff;
+            border-bottom: 5px solid #f5f5f5;
+        }
+
+        .mui-slider .mui-slider-group {
+            margin: 0 -10px;
+        }
+
+        .search-content {
+            position: relative;
+        }
+        .search-content>.mui-icon.iconfont.icon-search {
+            padding: 0;
+            margin: 0;
+            line-height: 45px;
+            left: 10px;
+
+        }
+        .topSearch-box {
+            position: absolute;
+            /*transition: all ease-in-out .3s;*/
+            transform: translateY(0);
+            z-index: 10;width: 100%;
+            background-color: #5084ef;
+            padding: 10px;
+            display: none;
+        }
+        .topSearch-box .mui-icon.iconfont.icon-search {
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body id="pullrefresh">
+<div id="app" class="pageWrapper mui-scroll-wrapper">
+    <div class="topSearch-box">
+        <div class="search-content">
+            <span class="mui-icon iconfont icon-search mui-pull-left"></span>
+            <a href="" class="searchbtn">请输入企业名称、注册号等</a>
+        </div>
+    </div>
+    <div class="mui-scroll">
+        <header class="mui-bar mui-bar-nav lj-bar-nar">
+            <!--轮播图begin by sunchuanwem-->
+            <div id="slider" class="mui-slider">
+                <div class="mui-slider-group mui-slider-loop">
+                    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                    <div class="mui-slider-item mui-slider-item-duplicate">
+                        <a href="#">
+                            <img src="../images/banner1.png">
+                        </a>
+                    </div>
+                    <!-- 第一张 -->
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="../images/banner1.png">
+                        </a>
+                    </div>
+                    <!-- 第二张 -->
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="../images/banner1.png">
+                        </a>
+                    </div>
+                    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                    <div class="mui-slider-item mui-slider-item-duplicate">
+                        <a href="#">
+                            <img src="../images/banner1.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="mui-slider-indicator">
+                    <div class="mui-indicator mui-active"></div>
+                    <div class="mui-indicator"></div>
+                </div>
+            </div>
+            <!--轮播图end by sunchuanwem-->
+            <div class="search-content">
+                <span class="mui-icon iconfont icon-search  mui-pull-left"></span>
+                <a href="" class="searchbtn">请输入企业名称、注册号等</a>
+            </div>
+            <div class="clearfloat"></div>
+        <!--    <div class="search-content fixdsearch" id="fixdsearch">
+                <span class="mui-icon iconfont icon-search  mui-pull-left"></span>
+                <a href="" class="searchbtn">请输入企业名称、注册号等</a>
+            </div>-->
+            <div class="clearfloat"></div>
+        </header>
+        <div class="mui-content lj-content" style="padding-top: 40px;">
+            <div class="mui-box">
+
+                <!--热点推送begin by sunchuanwem-->
+                <div class="hotpush-box mr10" id="refreshContainer">
+                    <ul>
+                        <li class="tsli" style="clear: both;margin-bottom: 5px;">
+                            <div class="zblibg fl">
+                                <span class="pushnb">8</span>
+                                <span class="pushtype">招投标推送</span>
+                            </div>
+                            <div class="mui-media-body">
+                                <!--<span class="mui-icon iconfont icon-bell fl"></span>-->
+                                <p class='pushhottitle' style="display: inline-block;"><span class="mui-icon iconfont icon-bell fl" style="display: inline-block;"></span>中国科学技术大学附属第一医院（安徽省立医院）南区结果公示</p>
+                                <div class="line"></div>
+                                <div class="time-bq">
+                                    <div class="fl timetiem">
+                                        <span class="mui-icon iconfont icon-time"></span>
+                                        <span class="time">06-28 18:45</span>
+                                    </div>
+                                    <div class="bqtiem">
+                                        <span class="grebor gre">浙江</span>
+                                        <span class="blbor bl">中标</span>
+                                        <span class="orbor or">系统集成及安全</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="tsli ">
+                            <div class="zblibg fl yqlibg">
+                                <span class="pushnb">12</span>
+                                <span class="pushtype">舆情推送</span>
+                            </div>
+                            <div class="mui-media-body">
+                                <p class='pushhottitle' style="display: inline-block;">
+                                    <span class="mui-icon iconfont icon-bell fl" style="display: inline-block;"></span> 宝盈新价值灵活配置混合型证券投资基金更新招募说明书摘要
+                                    <span style="display: inline-block;font-size: 9px;color: #fff;background: #ff532b;border-radius:8px 0 8px 0;padding: 0 4px;height: 18px;line-height: 18px;">风险</span>
+                                </p>
+                                <div class="line"></div>
+                                <div class="time-bq">
+                                    <div class="fl timetiem">
+                                        <span class="mui-icon iconfont icon-time"></span>
+                                        <span class="time">06-12 09:45</span>
+                                    </div>
+                                    <div class="bqtiem">
+                                        <span class="ppbor pp">中标</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                        <div class="clearfloat"></div>
+                    </ul>
+                </div>
+                <div class="clearfloat"></div>
+
+                <!--热点推送end by sunchuanwem-->
+
+                <div id="slider1" class="mui-slider tapbox">
+                    <div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+                        <div class="mui-scroll slidertab" style="font-size:16px;font-family:'方正正黑'; border-spacing: 10px;">
+                            <a class="mui-control-item mui-active" href="#item1mobile">
+                                全部
+                            </a>
+                            <a class="mui-control-item" href="#item2mobile">
+                                招投标
+                            </a>
+                            <a class="mui-control-item" href="#item3mobile">
+                                失信/被执行人
+                            </a>
+                            <a class="mui-control-item" href="#item4mobile">
+                                舆情
+                            </a>
+                            <a class="mui-control-item" href="#item5mobile">
+                                新闻
+                            </a>
+                        </div>
+                    </div>
+                    <div id="sliderSegmentedControl1" class="grouptap mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+                        <ul class="mui-scroll taptiem">
+                            <li class="mui-control-item mui-active" href="#item1mobile" data-wid="tab-top-subpage-1.html">
+                                全部
+                            </li>
+                            <li class="mui-control-item" href="#item2mobile" data-wid="tab-top-subpage-2.html">
+                                竞争对手
+                            </li>
+                            <li class="mui-control-item" href="#item3mobile" data-wid="tab-top-subpage-3.html">
+                                供应商
+                            </li>
+                            <li class="mui-control-item" href="#item4mobile" data-wid="tab-top-subpage-4.html">
+                                客户
+                            </li>
+                            <li class="mui-control-item" href="#item5mobile" data-wid="tab-top-subpage-5.html">
+                                其他
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mui-slider-group">
+                        <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+                            <ul class="companyNews">
+                                <li class="companyNewsCell">
+                                    <div class="companyNewsNode">
+                                        <span class="circleNode">1</span>
+                                        <div class="companyNameBox mclor">
+                                            <a href="../ljCompany/companyDetails.html" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                            <i class="timeBox">01-11</i>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条-->
+                                        <div class="twozxbox">
+                                            <a href="infotxt.html" class="zx_box">
+                                                <h5 class="zx_tit">中国经济信息社信息服务项目单一来源（成交）公告</h5>
+                                                <div class="zx_txt txt_pr96">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                    <i class="rightLab bc_bule">招投标</i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条 end-->
+                                    </div>
+                                </li>
+
+                                <li class="companyNewsCell">
+                                    <div class="companyNewsNode">
+                                        <span class="circleNode">2</span>
+                                        <div class="companyNameBox">
+                                            <a href="" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                            <i class="timeBox">01-11</i>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条-->
+                                        <div class="twozxbox">
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_green">信息披露</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_orange">裁判文书</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                        <!--公告、资讯，最多展示两条 end-->
+                                    </div>
+                                </li>
+
+                                <li class="companyNewsCell">
+                                    <div class="companyNewsNode">
+                                        <span class="circleNode">28</span>
+                                        <div class="companyNameBox">
+                                            <a href="" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                            <i class="timeBox">01-11</i>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条-->
+                                        <div class="twozxbox">
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_green">信息披露</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_green">信息披露</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条 end-->
+                                    </div>
+                                    <!--查看全部-->
+                                    <a href="checkAllInfo.html" class="checkAllInfo">
+                                        查看01月04日新增28条信息披露
+                                        <i class="mui-icon mui-icon-arrowright"></i>
+                                    </a>
+                                    <!--查看全部 end-->
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="item2mobile" class="mui-slider-item mui-control-content">
+                            <ul class="companyNews">
+                                <li class="companyNewsCell">
+                                    <div class="companyNewsNode">
+                                        <span class="circleNode">2</span>
+                                        <div class="companyNameBox mclor">
+                                            <a href="../ljCompany/companyDetails.html" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                            <i class="timeBox">01-11</i>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条-->
+                                        <div class="twozxbox">
+                                            <a href="infotxt.html" class="zx_box">
+                                                <h5 class="zx_tit">中国经济信息社信息服务项目单一来源（成交）公告</h5>
+                                                <div class="zx_txt txt_pr96">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                    <i class="rightLab bc_bule">招投标</i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条 end-->
+                                    </div>
+                                </li>
+
+                                <li class="companyNewsCell">
+                                    <div class="companyNewsNode">
+                                        <span class="circleNode">2</span>
+                                        <div class="companyNameBox">
+                                            <a href="" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                            <i class="timeBox">01-11</i>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条-->
+                                        <div class="twozxbox">
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_green">信息披露</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_orange">裁判文书</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                        <!--公告、资讯，最多展示两条 end-->
+                                    </div>
+                                </li>
+
+                                <li class="companyNewsCell">
+                                    <div class="companyNewsNode">
+                                        <span class="circleNode">11</span>
+                                        <div class="companyNameBox">
+                                            <a href="" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                            <i class="timeBox">01-11</i>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条-->
+                                        <div class="twozxbox">
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_green">信息披露</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_green">信息披露</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条 end-->
+                                    </div>
+                                    <!--查看全部-->
+                                    <a href="checkAllInfo.html" class="checkAllInfo">
+                                        查看01月04日新增28条信息披露
+                                        <i class="mui-icon mui-icon-arrowright"></i>
+                                    </a>
+                                    <!--查看全部 end-->
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="item3mobile" class="mui-slider-item mui-control-content">
+                            <ul class="companyNews">
+                                <li class="companyNewsCell">
+                                    <div class="companyNewsNode">
+                                        <span class="circleNode">3</span>
+                                        <div class="companyNameBox mclor">
+                                            <a href="../ljCompany/companyDetails.html" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                            <i class="timeBox">01-11</i>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条-->
+                                        <div class="twozxbox">
+                                            <a href="infotxt.html" class="zx_box">
+                                                <h5 class="zx_tit">中国经济信息社信息服务项目单一来源（成交）公告</h5>
+                                                <div class="zx_txt txt_pr96">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                    <i class="rightLab bc_bule">招投标</i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条 end-->
+                                    </div>
+                                </li>
+
+                                <li class="companyNewsCell">
+                                    <div class="companyNewsNode">
+                                        <span class="circleNode">2</span>
+                                        <div class="companyNameBox">
+                                            <a href="" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                            <i class="timeBox">01-11</i>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条-->
+                                        <div class="twozxbox">
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_green">信息披露</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_orange">裁判文书</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                        <!--公告、资讯，最多展示两条 end-->
+                                    </div>
+                                </li>
+
+                                <li class="companyNewsCell">
+                                    <div class="companyNewsNode">
+                                        <span class="circleNode">28</span>
+                                        <div class="companyNameBox">
+                                            <a href="" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                            <i class="timeBox">01-11</i>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条-->
+                                        <div class="twozxbox">
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_green">信息披露</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_green">信息披露</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条 end-->
+                                    </div>
+                                    <!--查看全部-->
+                                    <a href="checkAllInfo.html" class="checkAllInfo">
+                                        查看01月04日新增28条信息披露
+                                        <i class="mui-icon mui-icon-arrowright"></i>
+                                    </a>
+                                    <!--查看全部 end-->
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="item4mobile" class="mui-slider-item mui-control-content">
+                            <ul class="companyNews">
+                                <li class="companyNewsCell">
+                                    <div class="companyNewsNode">
+                                        <span class="circleNode">3</span>
+                                        <div class="companyNameBox mclor">
+                                            <a href="../ljCompany/companyDetails.html" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                            <i class="timeBox">01-11</i>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条-->
+                                        <div class="twozxbox">
+                                            <a href="infotxt.html" class="zx_box">
+                                                <h5 class="zx_tit">中国经济信息社信息服务项目单一来源（成交）公告</h5>
+                                                <div class="zx_txt txt_pr96">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                    <i class="rightLab bc_bule">招投标</i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条 end-->
+                                    </div>
+                                </li>
+
+                                <li class="companyNewsCell">
+                                    <div class="companyNewsNode">
+                                        <span class="circleNode">2</span>
+                                        <div class="companyNameBox">
+                                            <a href="" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                            <i class="timeBox">01-11</i>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条-->
+                                        <div class="twozxbox">
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_green">信息披露</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_orange">裁判文书</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                        <!--公告、资讯，最多展示两条 end-->
+                                    </div>
+                                </li>
+
+                                <li class="companyNewsCell">
+                                    <div class="companyNewsNode">
+                                        <span class="circleNode">28</span>
+                                        <div class="companyNameBox">
+                                            <a href="" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                            <i class="timeBox">01-11</i>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条-->
+                                        <div class="twozxbox">
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_green">信息披露</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_green">信息披露</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条 end-->
+                                    </div>
+                                    <!--查看全部-->
+                                    <a href="checkAllInfo.html" class="checkAllInfo">
+                                        查看01月04日新增28条信息披露
+                                        <i class="mui-icon mui-icon-arrowright"></i>
+                                    </a>
+                                    <!--查看全部 end-->
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="item5mobile" class="mui-slider-item mui-control-content">
+                            <ul class="companyNews">
+                                <li class="companyNewsCell">
+                                    <div class="companyNewsNode">
+                                        <span class="circleNode">3</span>
+                                        <div class="companyNameBox mclor">
+                                            <a href="../ljCompany/companyDetails.html" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                            <i class="timeBox">01-11</i>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条-->
+                                        <div class="twozxbox">
+                                            <a href="infotxt.html" class="zx_box">
+                                                <h5 class="zx_tit">中国经济信息社信息服务项目单一来源（成交）公告</h5>
+                                                <div class="zx_txt txt_pr96">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                    <i class="rightLab bc_bule">招投标</i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条 end-->
+                                    </div>
+                                </li>
+
+                                <li class="companyNewsCell">
+                                    <div class="companyNewsNode">
+                                        <span class="circleNode">2</span>
+                                        <div class="companyNameBox">
+                                            <a href="" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                            <i class="timeBox">01-11</i>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条-->
+                                        <div class="twozxbox">
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_green">信息披露</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_orange">裁判文书</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                        <!--公告、资讯，最多展示两条 end-->
+                                    </div>
+                                </li>
+
+                                <li class="companyNewsCell">
+                                    <div class="companyNewsNode">
+                                        <span class="circleNode">28</span>
+                                        <div class="companyNameBox">
+                                            <a href="" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                            <i class="timeBox">01-11</i>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条-->
+                                        <div class="twozxbox">
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_green">信息披露</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+                                            <a href="" class="zx_box">
+                                                <h5 class="zx_tit txt_pr96">
+                                                    <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                                    <i class="rightLab bc_green">信息披露</i>
+                                                </h5>
+                                                <div class="zx_txt ">
+                                                    <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!--公告、资讯，最多展示两条 end-->
+                                    </div>
+                                    <!--查看全部-->
+                                    <a href="checkAllInfo.html" class="checkAllInfo">
+                                        查看01月04日新增28条信息披露
+                                        <i class="mui-icon mui-icon-arrowright"></i>
+                                    </a>
+                                    <!--查看全部 end-->
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfloat"></div>
+
+                <!--资讯内容-->
+                <!--<div class="zixunCon" style="overflow: inherit; display: none;">
+                    <div id="slider2" class="mui-slider tapbox">
+                        <div id="sliderSegmentedControl1" class="infotap mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+                            <ul class="mui-scroll taptiem">
+                                <li class="all mui-control-item mui-active" href="#item1mobile" data-wid="tab-top-subpage-1.html">
+                                    全部
+                                </li>
+                                <li class="mui-control-item" href="#item2mobile" data-wid="tab-top-subpage-2.html">
+                                    招投标
+                                </li>
+                                <li class="mui-control-item" href="#item3mobile" data-wid="tab-top-subpage-3.html">
+                                    失信/被执行人
+                                </li>
+                                <li class="mui-control-item" href="#item4mobile" data-wid="tab-top-subpage-4.html">
+                                    裁判文书
+                                </li>
+                                <li class="mui-control-item" href="#item5mobile" data-wid="tab-top-subpage-5.html">
+                                    法院公告
+                                </li>
+                                <li class="mui-control-item" href="#item2mobile" data-wid="tab-top-subpage-2.html">
+                                    新闻
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="sliderSegmentedControl1" class="grouptap mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+                            <ul class="mui-scroll taptiem">
+                                <li class="mui-control-item mui-active" href="#item1mobile" data-wid="tab-top-subpage-1.html">
+                                    全部
+                                </li>
+                                <li class="mui-control-item" href="#item2mobile" data-wid="tab-top-subpage-2.html">
+                                    竞争对手
+                                </li>
+                                <li class="mui-control-item" href="#item3mobile" data-wid="tab-top-subpage-3.html">
+                                    供应商
+                                </li>
+                                <li class="mui-control-item" href="#item4mobile" data-wid="tab-top-subpage-4.html">
+                                    客户
+                                </li>
+                                <li class="mui-control-item" href="#item5mobile" data-wid="tab-top-subpage-5.html">
+                                    其他
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <ul class="companyNews">
+                        <li class="companyNewsCell">
+                            <div class="companyNewsNode">
+                                <span class="circleNode">1</span>
+                                <div class="companyNameBox mclor">
+                                    <a href="../ljCompany/companyDetails.html" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                    <i class="timeBox">01-11</i>
+                                </div>
+                                &lt;!&ndash;公告、资讯，最多展示两条&ndash;&gt;
+                                <div class="twozxbox">
+                                    <a href="infotxt.html" class="zx_box">
+                                        <h5 class="zx_tit">中国经济信息社信息服务项目单一来源（成交）公告</h5>
+                                        <div class="zx_txt txt_pr96">
+                                            <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                            <i class="rightLab bc_bule">招投标</i>
+                                        </div>
+                                    </a>
+                                </div>
+                                &lt;!&ndash;公告、资讯，最多展示两条 end&ndash;&gt;
+                            </div>
+                        </li>
+
+                        <li class="companyNewsCell">
+                            <div class="companyNewsNode">
+                                <span class="circleNode">2</span>
+                                <div class="companyNameBox">
+                                    <a href="" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                    <i class="timeBox">01-11</i>
+                                </div>
+                                &lt;!&ndash;公告、资讯，最多展示两条&ndash;&gt;
+                                <div class="twozxbox">
+                                    <a href="" class="zx_box">
+                                        <h5 class="zx_tit txt_pr96">
+                                            <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                            <i class="rightLab bc_green">信息披露</i>
+                                        </h5>
+                                        <div class="zx_txt ">
+                                            <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                        </div>
+                                    </a>
+                                    <a href="" class="zx_box">
+                                        <h5 class="zx_tit txt_pr96">
+                                            <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                            <i class="rightLab bc_orange">裁判文书</i>
+                                        </h5>
+                                        <div class="zx_txt ">
+                                            <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                &lt;!&ndash;公告、资讯，最多展示两条 end&ndash;&gt;
+                            </div>
+                        </li>
+
+                        <li class="companyNewsCell">
+                            <div class="companyNewsNode">
+                                <span class="circleNode">28</span>
+                                <div class="companyNameBox">
+                                    <a href="" class="companyNameTxt mclor">中国经济信息社有限公司</a>
+                                    <i class="timeBox">01-11</i>
+                                </div>
+                                &lt;!&ndash;公告、资讯，最多展示两条&ndash;&gt;
+                                <div class="twozxbox">
+                                    <a href="" class="zx_box">
+                                        <h5 class="zx_tit txt_pr96">
+                                            <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                            <i class="rightLab bc_green">信息披露</i>
+                                        </h5>
+                                        <div class="zx_txt ">
+                                            <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                        </div>
+                                    </a>
+                                    <a href="" class="zx_box">
+                                        <h5 class="zx_tit txt_pr96">
+                                            <span>中国经济信息社信息服务项目单一来源（成交）公告</span>
+                                            <i class="rightLab bc_green">信息披露</i>
+                                        </h5>
+                                        <div class="zx_txt ">
+                                            <span> 黔东南苗族侗族自治州人民政府信息管理办公室 采购|单一来源公告</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                &lt;!&ndash;公告、资讯，最多展示两条 end&ndash;&gt;
+                            </div>
+                            &lt;!&ndash;查看全部&ndash;&gt;
+                            <a href="checkAllInfo.html" class="checkAllInfo">
+                                查看01月04日新增28条信息披露
+                                <i class="mui-icon mui-icon-arrowright"></i>
+                            </a>
+                            &lt;!&ndash;查看全部 end&ndash;&gt;
+                        </li>
+                    </ul>
+                </div>-->
+                <!--资讯内容 end-->
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/mui.min.js"></script>
+<script src="../js/app.js"></script>
+<script src="indexLj.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  /*  window.onscroll = function() {
+        //获取滚动条当前位置
+        function getScrollTop() {
+            var scrollTop = 0,
+                bodyScrollTop = 0,
+                documentScrollTop = 0;
+            if(document.body) {
+                bodyScrollTop = document.body.scrollTop;
+            }
+            if(document.documentElement) {
+                documentScrollTop = document.documentElement.scrollTop;
+            }
+            scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+            return scrollTop;
+        }
+
+        var fixdsearch = document.getElementById("fixdsearch"); //搜索框
+        if(getScrollTop() > 140) { //当滚动距离大于90px时执行下面的东西
+            fixdsearch.style.opacity = '1'
+        } else { //当滚动距离小于90的时候执行下面的内容，也就是让导航栏恢复原状
+            fixdsearch.style.opacity = '0'
+        }
+    };*/
+
+  document.querySelector('.mui-scroll-wrapper' ).addEventListener('scroll', function (e) {
+      var scrollH = e.detail.y;//获取滚动距离
+      console.log(scrollH);
+          if(scrollH<-200){
+              mui('.topSearch-box')[0].style.display= 'block';
+//              mui('.topSearch-box')[0].style.top=-scrollH+'px';
+              mui('.topSearch-box')[0].style.transform = 'translateY('+-scrollH +'px)';
+
+          }else{
+              mui('.topSearch-box')[0].style.display= 'none';
+          }
+  })
+</script>
+</body>
+
+</html>

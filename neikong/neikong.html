@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>内控</title>
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link href="../css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/ljpublic.css">
+    <script src="../js/d3.min.js"></script>
+    <style>
+
+    </style>
+</head>
+<body class="neikong-box">
+<div class="mui-content">
+
+    <div id="slider" class="mui-slider mui-fullscreen">
+        <div id="sliderSegmentedControl" class=" mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+            <a class="mui-control-item mui-active" href="#item1mobile">
+                <span class="nk-tab">企业</span>
+            </a>
+            <a class="mui-control-item" href="#item2mobile">
+                <span class="nk-tab">个人</span>
+            </a>
+        </div>
+        <div class="mui-slider-group">
+            <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+                <!--添加企业输入框-->
+                <div class="nk-add-qyk">
+                    <div class="qytp-search">
+                        <span class="iconfont icon-search"></span>
+                        <a href="" class="qytp-input-link"><input type="text" placeholder="输入企业名称、注册号等" readonly></a>
+                        <button><span class="mui-icon mui-icon-plusempty"></span>添加</button>
+                    </div>
+                </div>
+                <!--添加企业输入框 end-->
+                <div id="scroll1" class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <div class="nk-tp">
+                            <img src="../images/nk-tp.png" alt="">
+                            <a href="nk-tp.html" style="overflow: hidden;display: block;width: 100%;height: 110px;position: absolute;top: 60px;left: 0;z-index: 10"></a>
+                         <!--   <div id="svgBox" style="width: 100%;height: 110px;"></div>-->
+                        </div>
+                        <!--无企业内控时显示-->
+                       <!-- <div class="nodata-box" style="margin-top: 50px;">
+                            <img src="../images/noInfo.png" alt="">
+                            <p>暂无内控企业，请添加企业内控</p>
+                        </div>-->
+                        <!--无企业内控时显示 end-->
+
+                        <ul class="nk-companylist">
+                            <li class="nk-c-list-cell">
+                                <span class="iconfont icon-delete nk-del-ico"></span>
+                                <a href="nk-qyxq.html" class="nk-c-link">
+                                    <span class="c-name-ico">北</span>
+                                    <span class="right-c-nmae-txt">
+                                        北京小米数码科技有限公司
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nk-c-list-cell">
+                                <span class="iconfont icon-delete nk-del-ico"></span>
+                                <a href="" class="nk-c-link">
+                                    <span class="c-name-ico">北</span>
+                                    <span class="right-c-nmae-txt">
+                                        北京中关村数字科技有限公司
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nk-c-list-cell">
+                                <span class="iconfont icon-delete nk-del-ico"></span>
+                                <a href="nk-qyxq.html" class="nk-c-link">
+                                    <span class="c-name-ico">北</span>
+                                    <span class="right-c-nmae-txt">
+                                        北京小米数码科技有限公司
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nk-c-list-cell">
+                                <span class="iconfont icon-delete nk-del-ico"></span>
+                                <a href="nk-qyxq.html" class="nk-c-link">
+                                    <span class="c-name-ico">北</span>
+                                    <span class="right-c-nmae-txt">
+                                        北京中关村数字科技有限公司
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nk-c-list-cell">
+                                <span class="iconfont icon-delete nk-del-ico"></span>
+                                <a href="nk-qyxq.html" class="nk-c-link">
+                                    <span class="c-name-ico">北</span>
+                                    <span class="right-c-nmae-txt">
+                                        北京小米数码科技有限公司
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nk-c-list-cell">
+                                <span class="iconfont icon-delete nk-del-ico"></span>
+                                <a href="" class="nk-c-link">
+                                    <span class="c-name-ico">北</span>
+                                    <span class="right-c-nmae-txt">
+                                        北京中关村数字科技有限公司
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nk-c-list-cell">
+                                <span class="iconfont icon-delete nk-del-ico"></span>
+                                <a href="" class="nk-c-link">
+                                    <span class="c-name-ico">北</span>
+                                    <span class="right-c-nmae-txt">
+                                        北京小米数码科技有限公司
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nk-c-list-cell">
+                                <span class="iconfont icon-delete nk-del-ico"></span>
+                                <a href="" class="nk-c-link">
+                                    <span class="c-name-ico">北</span>
+                                    <span class="right-c-nmae-txt">
+                                        北京中关村数字科技有限公司
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="item2mobile" class="mui-slider-item mui-control-content">
+                <!--添加个人信息-->
+                <div class="nk-add-gr">
+                    <ul>
+                        <li class="gr-info-cell mui-input-row">
+                            <input type="text" class="mui-input-clear" placeholder="请输入姓名">
+                        </li>
+                        <li class="gr-info-cell mui-input-row">
+                            <input type="text" class="mui-input-clear" placeholder="请输入电话">
+                        </li>
+                        <li class="gr-info-cell mui-input-row">
+                            <input type="text" class="mui-input-clear" placeholder="请输入身份证号">
+                        </li>
+                        <li class="gr-info-cell mui-input-row">
+                            <input type="text" class="mui-input-clear" placeholder="请输入公司名称">
+                        </li>
+                    </ul>
+                    <!--btn-->
+                    <div class="nk-add-btn-box">
+                        <button>添加</button>
+                    </div>
+                </div>
+                <!--添加个人信息 end-->
+                <div id="scroll2" class="mui-scroll-wrapper" style="top: 234px;">
+                    <div class="mui-scroll">
+                        <!--添加的个人-->
+                        <!--无企业内控时显示-->
+                     <!--   <div class="nodata-box" style="margin-top: 50px;">
+                            <img src="../images/noInfo.png" alt="">
+                            <p>暂无内控个人，请添加个人内控</p>
+                        </div>-->
+                        <!--无企业内控时显示 end-->
+
+                        <ul class="nk-gr-list">
+                           <li class="nk-gr-info-box">
+                               <span class="iconfont icon-delete nk-del-ico"></span>
+                               <a href="nk-grxq.html" class="nk-gr-info-link">
+                                   <span class="left-gr-hd"><img src="../images/manhead.png" alt=""></span>
+                                   <div class="right-gr-info">
+                                       <h4>马化腾</h4>
+                                       <p>身份证号 : 3408231980040433</p>
+                                       <p>电话 : 13345678909</p>
+                                       <p>公司 : 腾讯科技(深圳)有限公司</p>
+                                   </div>
+                               </a>
+                           </li>
+                            <li class="nk-gr-info-box">
+                                <span class="iconfont icon-delete nk-del-ico"></span>
+                                <a href="nk-grxq.html" class="nk-gr-info-link">
+                                    <span class="left-gr-hd"><img src="../images/manhead.png" alt=""></span>
+                                    <div class="right-gr-info">
+                                        <h4>马化腾</h4>
+                                        <p>身份证号 : 3408231980040433</p>
+                                        <p>电话 : 13345678909</p>
+                                        <p>公司 : 腾讯科技(深圳)有限公司</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nk-gr-info-box">
+                                <span class="iconfont icon-delete nk-del-ico"></span>
+                                <a href="nk-grxq.html" class="nk-gr-info-link">
+                                    <span class="left-gr-hd"><img src="../images/manhead.png" alt=""></span>
+                                    <div class="right-gr-info">
+                                        <h4>马化腾</h4>
+                                        <p>身份证号 : 3408231980040433</p>
+                                        <p>电话 : 13345678909</p>
+                                        <p>公司 : 腾讯科技(深圳)有限公司</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nk-gr-info-box">
+                                <span class="iconfont icon-delete nk-del-ico"></span>
+                                <a href="" class="nk-gr-info-link">
+                                    <span class="left-gr-hd"><img src="../images/manhead.png" alt=""></span>
+                                    <div class="right-gr-info">
+                                        <h4>马化腾</h4>
+                                        <p>身份证号 : 3408231980040433</p>
+                                        <p>电话 : 13345678909</p>
+                                        <p>公司 : 腾讯科技(深圳)有限公司</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nk-gr-info-box">
+                                <span class="iconfont icon-delete nk-del-ico"></span>
+                                <a href="" class="nk-gr-info-link">
+                                    <span class="left-gr-hd"><img src="../images/manhead.png" alt=""></span>
+                                    <div class="right-gr-info">
+                                        <h4>马化腾</h4>
+                                        <p>身份证号 : 3408231980040433</p>
+                                        <p>电话 : 13345678909</p>
+                                        <p>公司 : 腾讯科技(深圳)有限公司</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nk-gr-info-box">
+                                <span class="iconfont icon-delete nk-del-ico"></span>
+                                <a href="" class="nk-gr-info-link">
+                                    <span class="left-gr-hd"><img src="../images/manhead.png" alt=""></span>
+                                    <div class="right-gr-info">
+                                        <h4>马化腾</h4>
+                                        <p>身份证号 : 3408231980040433</p>
+                                        <p>电话 : 13345678909</p>
+                                        <p>公司 : 腾讯科技(深圳)有限公司</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="../js/mui.min.js"></script>
+<script src="../js/app.js"></script>
+
+<script>
+    mui('.mui-scroll-wrapper').scroll({
+        bounce: true,//滚动条是否有弹力默认是true
+        indicators: true //是否显示滚动条
+    });
+
+
+</script>
+<script>
+    let dataset={
+        'nodes':[
+            {
+                name:'安徽智侒信信息技术有限公司',
+                id:100
+            },
+            {
+                name:'滁州智侒信息信息技术有限公司',
+                num:6998998
+            },
+            {
+                name:'芜湖智侒信息信息技术有限公司',
+                id:101
+            },
+            {
+                name:'妲己',
+                num:6998997
+            },
+            {
+                name:'荆轲',
+                id:102
+            },
+            {
+                name:'哪吒',
+                num:6998996
+            },
+            {
+                name:'芈月',
+                id:103
+            },
+            {
+                name:'孙悟空',
+                num:6998995
+            },
+        ],
+
+        'links':[
+            {
+                from:100,
+                to:6998998
+            },
+            {
+                from:100,
+                to:101
+            },
+            {
+                from:100,
+                to:102
+            },
+            {
+                from:100,
+                to:6998997
+            },
+            {
+                from:6998998,
+                to:103
+            },
+            {
+                from:6998998,
+                to:6998996
+            },
+            {
+                from:100,
+                to:6998995
+            }
+        ]
+    };
+
+    let nodes = dataset.nodes;
+    let links = dataset.links;
+
+    links.forEach(function(e){
+        let sourceNode = nodes.filter(function(n){
+            //可以在nodes里边加一个字段，用来说明当前对象里包含的是id还是num，
+            // 判断时直接判断字段的值
+            // 例如：
+            //nodes:[
+            //  {
+            //    name:'亚瑟',
+            //    id:100,
+            //    label:'ID'
+            //  }
+            // ]
+            // 则判断可以写为：
+            // if(n.label === 'ID')
+            if((n.id !== undefined) && (n.id !== null) && (n.id !== '')){
+                return n.id === e.from;
+            }
+            else if((n.num !== undefined) && (n.num !== null) && (n.num !== '')){
+                return n.num === e.from;
+            }
+        })[0];
+
+        let targetNode = nodes.filter(function(n){
+            if((n.id !== undefined) && (n.id !== null) && (n.id !== '')){
+                return n.id === e.to;
+            }
+            else if((n.num !== undefined) && (n.num !== null) && (n.num !== '')){
+                return n.num === e.to;
+            }
+        })[0];
+
+        e.source = sourceNode;
+        e.target = targetNode;
+
+    });
+
+    let width =  window.screen.width;
+    let height = 110;
+
+    let svg = d3.select('#svgBox')
+        .append('svg')
+        .attr('width',width)
+        .attr('height',height);
+
+    let force = d3.layout.force()
+        .nodes(nodes) //设定节点数组
+        .links(links) //设定关系数组
+        .size([width,height]) //设定作用域的范围
+        .distance(1000)
+        .linkDistance(30) //设定关系连线的长度
+        .charge(-1500); //节点间的相互作用力
+
+    force.start(); //开始引力作用
+
+
+    //	定义一个颜色生成器，由d3提供
+    let color = d3.scale.category20(); //20表示可以生成20种不同的颜色
+
+    //	下边开始绘制
+    //	绘制节点间的关系连线
+    let linksLine = svg.selectAll('line')
+        .data(links)
+        .enter()
+        .append('line')
+        .style('stroke','#ccc')
+        .style('stroke-width',2);
+
+    //	绘制节点
+    let nodesCic = svg.selectAll('circle')
+        .data(nodes)
+        .enter()
+        .append('circle')
+        .attr('r',25)
+        .style('fill',function(d,i){
+            return color(i); //根据自身的索引号，自动随机获取一种背景颜色
+        })
+        .call(force.drag); //调用drag函数，是的节点可以拖动
+
+    //	给节点添加名称
+    let nodesTitle = svg.selectAll('text')
+        .data(nodes)
+        .enter()
+        .append('text')
+        .style('fill','#666')
+        .attr("text-anchor", "middle") //是的文字居中显示在节点上
+
+        // .attr('dx',20) //自定义文字的x坐标
+        // .attr('dy',5) //自定义文字的y坐标
+        .text(function(d){
+            return d.name;
+        });
+
+    force.on('tick',tick);
+
+    function tick(){
+        //	更新连线的坐标
+        linksLine.attr('x1',function(d){return d.source.x;})
+            .attr('y1',function(d){return d.source.y;})
+            .attr('x2',function(d){return d.target.x;})
+            .attr('y2',function(d){return d.target.y;});
+
+        //	更新节点坐标
+        nodesCic.attr('cx',function(d){return d.x;})
+            .attr('cy',function(d){return d.y});
+
+        //	更新文字坐标
+        nodesTitle.attr('x',function(d){return d.x})
+            .attr('y',function(d){return d.y + 5});
+
+    }
+
+</script>
+</body>
+</html>

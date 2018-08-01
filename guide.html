@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<link rel="stylesheet" href="css/mui.min.css">
+	<style>
+		#close {
+			position: absolute;
+			left: 50%;
+			margin-left: -54px;
+			bottom: 80px;
+			color: #5084ef;
+			border-color: #5084ef;
+			background-color: #fff;
+			z-index: 10;
+            width: 108px;
+            height: 33px;
+            line-height: 31px;
+            -webkit-border-radius: 33px;
+            -moz-border-radius: 33px;
+            border-radius: 33px;
+            padding: 0;
+            transition: all .3s ease-in-out;
+		}
+        #close:active {
+            background-color: #5084ef;
+            color: #fff;
+        }
+		.item-logo {
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+		.item-logo a {
+			/*width: 328px;
+			height: 328px;*/
+            width: 100%;
+            height:auto ;
+            padding:0 24px;
+			display: block;
+			border: 1px solid #FFFFFF;
+			border-color: rgba(255, 255, 255, 0.5);
+			text-align: center;
+			line-height: 200px;
+			border-radius: 50%;
+			font-size: 22px;
+			color: #333333;
+			position: absolute;
+			top: 68px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.animate {
+			position: absolute;
+			left: 0;
+			bottom: 140px;
+			width: 100%;
+			color: #666666;
+			display: -moz-box;
+		}
+		.animate h2 {
+			color: #333;
+			font-weight:normal;
+			text-align: center;
+			margin-bottom: 15px;
+			font-size: 24px;
+		}
+		.animate li {
+			width: 100%;
+			height: 30px;
+			line-height: 18px;
+			list-style: none;
+			font-size: 14px;
+			text-align: center;
+		}
+		.animate li:nth-child(3) {
+			text-align: left;
+			float: right;
+		}
+		.animated {
+			-webkit-animation-duration: 1s;
+			-webkit-animation-play-state: paused;
+			-webkit-animation-fill-mode: both;
+		}
+		.guide-show .bounceInDown {
+			-webkit-animation-name: bounceInDown;
+			-webkit-animation-play-state: running;
+			-webkit-animation-delay: 1s;
+			display: block;
+		}
+		.guide-show .bounceInLeft {
+			-webkit-animation-name: bounceInLeft;
+			display: block;
+			-webkit-animation-play-state: running;
+		}
+		.guide-show .bounceInRight {
+			-webkit-animation-name: bounceInRight;
+			display: block;
+			-webkit-animation-play-state: running;
+			-webkit-animation-delay: 0.5s;
+		}
+		@-webkit-keyframes bounceInDown {
+			0%, 60%, 75%, 90%, 100% {
+				-webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+			}
+			0% {
+				opacity: 0;
+				-webkit-transform: translate3d(0, -3000px, 0);
+				transform: translate3d(0, -3000px, 0);
+			}
+			60% {
+				opacity: 1;
+				-webkit-transform: translate3d(0, 25px, 0);
+				transform: translate3d(0, 25px, 0);
+			}
+			75% {
+				-webkit-transform: translate3d(0, -5px, 0);
+				transform: translate3d(0, -5px, 0);
+			}
+			90% {
+				-webkit-transform: translate3d(0, 3px, 0);
+				transform: translate3d(0, 3px, 0);
+			}
+			100% {
+				-webkit-transform: none;
+				transform: none;
+			}
+		}
+		@-webkit-keyframes bounceInLeft {
+			0%, 60%, 75%, 90%, 100% {
+				-webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+			}
+			0% {
+				opacity: 0;
+				-webkit-transform: translate3d(-3000px, 0, 0);
+				transform: translate3d(-3000px, 0, 0);
+			}
+			60% {
+				opacity: 1;
+				-webkit-transform: translate3d(25px, 0, 0);
+				transform: translate3d(25px, 0, 0);
+			}
+			75% {
+				-webkit-transform: translate3d(-10px, 0, 0);
+				transform: translate3d(-10px, 0, 0);
+			}
+			90% {
+				-webkit-transform: translate3d(5px, 0, 0);
+				transform: translate3d(5px, 0, 0);
+			}
+			100% {
+				-webkit-transform: none;
+				transform: none;
+			}
+		}
+		@-webkit-keyframes bounceInRight {
+			0%, 60%, 75%, 90%, 100% {
+				-webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+				animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+			}
+			0% {
+				opacity: 0;
+				-webkit-transform: translate3d(3000px, 0, 0);
+				transform: translate3d(3000px, 0, 0);
+			}
+			60% {
+				opacity: 1;
+				-webkit-transform: translate3d(-25px, 0, 0);
+				transform: translate3d(-25px, 0, 0);
+			}
+			75% {
+				-webkit-transform: translate3d(10px, 0, 0);
+				transform: translate3d(10px, 0, 0);
+			}
+			90% {
+				-webkit-transform: translate3d(-5px, 0, 0);
+				transform: translate3d(-5px, 0, 0);
+			}
+			100% {
+				-webkit-transform: none;
+				transform: none;
+			}
+		}
+		.jump{
+			position: absolute;
+			top:3%;
+			right:5%;
+			border:1px solid #fff;
+			padding: 5px 5px;
+			border-radius: 5px;
+		}
+		.item-logo a {
+			border: 0;
+		}
+		.szblogoImg {
+			/*position: absolute;*/
+			width:100%!important;
+			/*top:50%;
+			left: 50%;
+			margin-left: -164px;
+			margin-top: -164px;*/
+		}
+		.mui-slider-indicator .mui-indicator {
+			width: 8px;
+			height:8px;
+		}
+		.mui-slider-indicator .mui-indicator {
+			box-shadow:none;
+			background-color: #e5e5e5;
+			/*border: 1px solid #fff;*/
+		}
+		.mui-slider-indicator .mui-active.mui-indicator {
+			background-color: #5084ef;
+		}
+		.mui-slider-indicator {
+			bottom: 80px;
+		}
+		.mui-slider-item {
+			background-color: #fff;
+		}
+	</style>
+</head>
+
+<body>
+<div id="slider" class="mui-slider mui-fullscreen">
+	<div class="mui-slider-group">
+		<!-- 第一张 -->
+		<div class="mui-slider-item">
+			<div class="item-logo">
+				<a href="#">
+					<img src="images/guide1.png" alt=""class="szblogoImg" />
+				</a>
+				<div class="animate guide-show">
+					<h2 class="animated bounceInDown">企业招投标</h2>
+					<li class="animated bounceInLeft">招投标信息快速直达不错失</li>
+				</div>
+			</div>
+		</div>
+		<!-- 第二张 -->
+		<div class="mui-slider-item">
+			<div class="item-logo">
+				<a href="#">
+					<img src="images/guide2.png" alt=""  class="szblogoImg" />
+				</a>
+				<div id="tips-2" class="animate mui-hidden">
+					<h2 class="animated bounceInDown">风险舆情</h2>
+					<li class="animated bounceInLeft">风险随时洞察助止损</li>
+				</div>
+			</div>
+		</div>
+		<!-- 第三张 -->
+		<div class="mui-slider-item">
+			<div class="item-logo">
+				<a href="#">
+					<img src="images/guide3.png" alt=""  class="szblogoImg" />
+				</a>
+				<div id="tips-3" class="animate mui-hidden">
+					<h2 class="animated bounceInDown">企业征信</h2>
+					<li class="animated bounceInLeft">企业信用透视防欺诈</li>
+				</div>
+				<div class="animate" style="bottom: -9px">
+					<button id='close' class="mui-btn mui-btn-warning mui-btn-outlined">立即体验</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mui-slider-indicator">
+		<div class="mui-indicator mui-active"></div>
+		<div class="mui-indicator"></div>
+		<div class="mui-indicator"></div>
+	</div>
+</div>
+<script src="js/mui.min.js"></script>
+<script>
+    mui.back = function() {};
+    mui.plusReady(function() {
+        if(mui.os.ios){
+            plus.navigator.setFullscreen(true);
+        }
+        plus.navigator.closeSplashscreen();
+    });
+    //立即体验按钮点击事件
+    document.getElementById("close").addEventListener('tap', function(event) {
+        plus.storage.setItem("lauchFlag", "true");
+        plus.navigator.setFullscreen(false);
+        plus.webview.currentWebview().close();
+    }, false);
+    //图片切换时，触发动画
+    document.querySelector('.mui-slider').addEventListener('slide', function(event) {
+        //注意slideNumber是从0开始的；
+        var index = event.detail.slideNumber+1;
+     /*   if(index = 3){
+            console.log(index)
+           /!* mui('.mui-slider-indicator')[0].style.display = 'none'*!/
+        }else{
+            console.log(index)
+          /!*  mui('.mui-slider-indicator')[0].style.display = 'block'*!/
+        }*/
+        if(index==2||index==3){
+            var item = document.getElementById("tips-"+index);
+            if(item.classList.contains("mui-hidden")){
+                item.classList.remove("mui-hidden");
+                item.classList.add("guide-show");
+            }
+            if(index == 3){
+                mui('.mui-slider-indicator')[0].style.display = 'none'
+            }else{
+                mui('.mui-slider-indicator')[0].style.display = 'block'
+            }
+        }else{
+            mui('.mui-slider-indicator')[0].style.display = 'block'
+        }
+
+    });
+
+
+
+</script>
+</body>
+
+</html>

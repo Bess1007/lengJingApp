@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/d3.min.js"></script>
+    <!--<script src="https://d3js.org/d3.v3.min.js"></script>-->
+
+    <title></title>
+    <style>
+        span.mui-action-back {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            padding:0 50px;
+            height: 80px;
+            border:1px solid #ccc;
+            line-height: 80px;
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body>
+<span class="mui-action-back ">退出</span>
+<script>
+    let dataset={
+        'nodes':[
+            {
+                name:'安徽智侒信信息技术有限公司',
+                id:100
+            },
+            {
+                name:'滁州智侒信息信息技术有限公司',
+                num:6998998
+            },
+            {
+                name:'芜湖智侒信息信息技术有限公司',
+                id:101
+            },
+            {
+                name:'妲己',
+                num:6998997
+            },
+            {
+                name:'荆轲',
+                id:102
+            },
+            {
+                name:'哪吒',
+                num:6998996
+            },
+            {
+                name:'芈月',
+                id:103
+            },
+            {
+                name:'孙悟空',
+                num:6998995
+            },
+        ],
+
+        'links':[
+            {
+                from:100,
+                to:6998998
+            },
+            {
+                from:100,
+                to:101
+            },
+            {
+                from:100,
+                to:102
+            },
+            {
+                from:100,
+                to:6998997
+            },
+            {
+                from:6998998,
+                to:103
+            },
+            {
+                from:6998998,
+                to:6998996
+            },
+            {
+                from:100,
+                to:6998995
+            }
+        ]
+    };
+
+    let nodes = dataset.nodes;
+    let links = dataset.links;
+
+    links.forEach(function(e){
+        let sourceNode = nodes.filter(function(n){
+            //可以在nodes里边加一个字段，用来说明当前对象里包含的是id还是num，
+            // 判断时直接判断字段的值
+            // 例如：
+            //nodes:[
+            //  {
+            //    name:'亚瑟',
+            //    id:100,
+            //    label:'ID'
+            //  }
+            // ]
+            // 则判断可以写为：
+            // if(n.label === 'ID')
+            if((n.id !== undefined) && (n.id !== null) && (n.id !== '')){
+                return n.id === e.from;
+            }
+            else if((n.num !== undefined) && (n.num !== null) && (n.num !== '')){
+                return n.num === e.from;
+            }
+        })[0];
+
+        let targetNode = nodes.filter(function(n){
+            if((n.id !== undefined) && (n.id !== null) && (n.id !== '')){
+                return n.id === e.to;
+            }
+            else if((n.num !== undefined) && (n.num !== null) && (n.num !== '')){
+                return n.num === e.to;
+            }
+        })[0];
+
+        e.source = sourceNode;
+        e.target = targetNode;
+
+    });
+
+    let width = 1000;
+    let height = 1000;
+
+    let svg = d3.select('body')
+        .append('svg')
+        .attr('width',width)
+        .attr('height',height);
+
+    let force = d3.layout.force()
+        .nodes(nodes) //设定节点数组
+        .links(links) //设定关系数组
+        .size([width,height]) //设定作用域的范围
+        .distance(1000)
+        .linkDistance(30) //设定关系连线的长度
+        .charge(-1500); //节点间的相互作用力
+
+    force.start(); //开始引力作用
+
+
+    //	定义一个颜色生成器，由d3提供
+    let color = d3.scale.category20(); //20表示可以生成20种不同的颜色
+
+    //	下边开始绘制
+    //	绘制节点间的关系连线
+    let linksLine = svg.selectAll('line')
+        .data(links)
+        .enter()
+        .append('line')
+        .style('stroke','#ccc')
+        .style('stroke-width',2);
+
+    //	绘制节点
+    let nodesCic = svg.selectAll('circle')
+        .data(nodes)
+        .enter()
+        .append('circle')
+        .attr('r',25)
+        .style('fill',function(d,i){
+            return color(i); //根据自身的索引号，自动随机获取一种背景颜色
+        })
+        .call(force.drag); //调用drag函数，是的节点可以拖动
+
+    //	给节点添加名称
+    let nodesTitle = svg.selectAll('text')
+        .data(nodes)
+        .enter()
+        .append('text')
+        .style('fill','#666')
+        .attr("text-anchor", "middle") //是的文字居中显示在节点上
+
+        // .attr('dx',20) //自定义文字的x坐标
+        // .attr('dy',5) //自定义文字的y坐标
+        .text(function(d){
+            return d.name;
+        });
+
+    force.on('tick',tick);
+
+    function tick(){
+        //	更新连线的坐标
+        linksLine.attr('x1',function(d){return d.source.x;})
+            .attr('y1',function(d){return d.source.y;})
+            .attr('x2',function(d){return d.target.x;})
+            .attr('y2',function(d){return d.target.y;});
+
+        //	更新节点坐标
+        nodesCic.attr('cx',function(d){return d.x;})
+            .attr('cy',function(d){return d.y});
+
+        //	更新文字坐标
+        nodesTitle.attr('x',function(d){return d.x})
+            .attr('y',function(d){return d.y + 5});
+
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="bcWhite">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>预警</title>
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link href="../css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/ljpublic.css">
+    <style>
+
+    </style>
+</head>
+<body class="yjbox">
+<header class="mui-bar mui-bar-nav ">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">多节点关联</h1>
+    <span class="mui-icon mui-pull-right" id="filter_btn" style="font-size: 14px;height: 44px;line-height: 24px;">筛选</span>
+</header>
+<div class="mui-content bcWhite">
+    <div class="jdss">
+        <!--搜索框-->
+        <div class="jdss-input-box">
+            <span class="right-plus-ico iconfont icon-add-circled" style="display: none"></span><!--暂时隐藏-->
+            <ul>
+                <li class="jdss-input-box-cell">
+                    <a href="" class="input-link-cell">
+                        <span class="left-circle-ico "></span>
+                        <input type="text" value="杭州阿里巴巴网络科技有限公司" class="ssnr" readonly>
+                    </a>
+                </li>
+                <!--暂时隐藏-->
+                <li class="jdss-input-box-cell" style="display: none">
+                    <span class="input-del-btn iconfont icon-minus-circled"></span>
+                    <a href="" class="input-link-cell">
+                        <span class="left-circle-ico "></span>
+                        <input type="text" placeholder="添加第三个公司" class="ssnr" readonly>
+                    </a>
+                </li><!--暂时隐藏 end-->
+                <li class="jdss-input-box-cell">
+                    <a href="" class="input-link-cell">
+                        <span class="left-circle-ico "></span>
+                        <input type="text" value="杭州阿里巴巴网络科技有限公司" class="ssnr" readonly>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--搜索框 end-->
+        <div class="jdss-btn"><button>搜索</button></div>
+    </div>
+    <!--关联图谱-->
+    <div class="ssjgbox">
+        <img src="../images/tpsl.png" alt="" style="display:block;width: 300px;margin: 50px auto;">
+    </div>
+    <!--关联图谱-->
+
+    <!--筛选弹框-->
+    <div class="sx-box" style="display: none">
+        <div class="blackbc"></div>
+        <div class="sxk">
+            <div class="sx-tit">筛选</div>
+            <!--查询层级&关系类型-->
+            <div class="cen-filter-box">
+                <div class="filter-opt-box clearfix"  id="cxcjbox">
+                    <label class="fl opt-left-lable">查询层级 :</label>
+                    <ul class="fl opt-right-box">
+                        <li class="djd-sx-opt">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">1</span>
+                        </li>
+                        <li class="djd-sx-opt">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">2</span>
+                        </li>
+                        <li class="djd-sx-opt actived">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">3</span>
+                        </li>
+                        <li class="djd-sx-opt">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">4</span>
+                        </li>
+                        <li class="djd-sx-opt">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">5</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filter-opt-box clearfix" id="gxlxbox">
+                    <label class="fl opt-left-lable">关系类型 :</label>
+                    <ul class="fl opt-right-box">
+                        <li class="djd-sx-opt actived">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">投资关联</span>
+                        </li>
+                        <li class="djd-sx-opt actived">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">任职关联</span>
+                        </li>
+                        <li class="djd-sx-opt actived">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">办公地址疑似关联</span>
+                        </li>
+                        <li class="djd-sx-opt">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">电话疑似关联</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--查询层级&关系类型 end-->
+            <!--底部按钮-->
+            <div class="sx-btns">
+                <button>取消</button>
+                <button>确定</button>
+            </div>
+        </div>
+    </div>
+    <!--筛选弹框 end-->
+</div>
+<script src="../js/mui.min.js"></script>
+<script src="../js/app.js"></script>
+<script>
+    mui.init();
+    /*查询层级&关系类型选项选择*/
+    var cxcj_len = mui('#cxcjbox .djd-sx-opt').length;
+    var gxlx_len = mui('#gxlxbox .djd-sx-opt').length;
+    mui('#cxcjbox').on('tap','.djd-sx-opt',function () {
+        for(var i = 0;i< cxcj_len;i++){
+            mui('#cxcjbox .djd-sx-opt')[i].classList.remove('actived');
+        }
+        this.classList.add('actived');
+    })
+    mui('#gxlxbox').on('tap','.djd-sx-opt',function () {
+        this.classList.contains('actived')?this.classList.remove('actived'):this.classList.add('actived');
+    })
+    /*查询层级&关系类型选项选择 end*/
+
+    /*关闭弹框*/
+    function closeFilterBox() {
+        mui('.sx-box')[0].style.display = 'none'
+    }
+    mui('.sx-box .blackbc')[0].addEventListener('tap',function () {
+        closeFilterBox()
+    })
+    mui('#filter_btn')[0].addEventListener('tap',function () {
+        mui('.sx-box')[0].style.display = 'block'
+    })
+</script>
+</body>
+</html>

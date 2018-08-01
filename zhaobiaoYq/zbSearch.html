@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html class="bcWhite">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>预警</title>
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link href="../css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
+    <link rel="stylesheet" href="../css/ljpublic.css">
+    <style>
+
+    </style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav " style="height: 50px;">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="padding-top: 12px;"></a>
+    <h1 class="mui-title">
+        <!--搜索输入框-->
+        <div class="search-input-box" style="padding-left: 0;padding-right: 15px;">
+            <div class="search-inner mui-input-row" style="line-height: 38px;">
+                <span class="iconfont icon-search"></span>
+                <input type="text" placeholder="请输入企业名称、注册号等" class="mui-input-clear">
+            </div>
+        </div>
+        <!--搜索输入框 end-->
+    </h1>
+    <span class="mui-pull-right mui-icon" id="bidFilterBtn" style="font-size: 14px;line-height: 34px;">筛选</span>
+</header>
+<div class="mui-content">
+    <div class="mui-scroll-wrapper mui-fullscreen">
+        <div class="mui-scroll" style="padding-top: 48px;">
+            <!--最近搜索-->
+            <div class="recentSearchBox">
+                <div style="height: 5px;background-color: #f6f6f6;"></div>
+                <h5 class="hotSearch-tit">
+                    <span>最近搜索</span>
+                    <i class="delRecentSc iconfont icon-delete"></i>
+                </h5>
+                <div class="recentSearchCon clearfix">
+                    <a href="" class="recentSearchCon-node">深圳华为</a>
+                    <a href="" class="recentSearchCon-node">小米科技</a>
+                    <a href="" class="recentSearchCon-node">雷军</a>
+                    <a href="" class="recentSearchCon-node">万科集团</a>
+                    <a href="" class="recentSearchCon-node">腾讯科技有限公司</a>
+                    <a href="" class="recentSearchCon-node">联想集团</a>
+                </div>
+            </div>
+            <!--最近搜索 end-->
+            <!--模糊查询搜索结果-->
+          <!--  <div class="vague-rs">
+                <div class="vague-rs-tit">
+                    为您搜索到 <span class="yellow-txt">288</span> 家相关企业
+                </div>
+                <ul class="vague-rs-con">
+                    <li class="vague-rs-li">
+                        <div class="left-c-info">
+                            <h4 class="rs-c-name">
+                                北京<i class="text-orangered">小米</i>科技有限责任公司
+                            </h4>
+                            <span class="rs-txts mb12">雷军</span>
+                            <span class="rs-txts">1800000000万人民币</span>
+                        </div>
+                        <div class="right-rs-info">
+                            <span class="rs-c-state">开业</span>
+                            <span class="rs-txts mb12">北京市</span>
+                            <span class="rs-txts rs-txt-time">2010-03-03</span>
+                        </div>
+                    </li>
+                    <li class="vague-rs-li">
+                        <div class="left-c-info">
+                            <h4 class="rs-c-name">
+                                北京<i class="text-orangered">小米</i>科技有限责任公司
+                            </h4>
+                            <span class="rs-txts mb12">雷军</span>
+                            <span class="rs-txts">1800000000万人民币</span>
+                        </div>
+                        <div class="right-rs-info">
+                            <span class="rs-c-state">存续</span>
+                            <span class="rs-txts mb12">北京市</span>
+                            <span class="rs-txts rs-txt-time">2010-03-03</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>-->
+            <!--模糊查询搜索结果 end-->
+        </div>
+    </div>
+
+    <!--招标搜索-筛选框-->
+    <div class="bid-filter-box ">
+        <!--底部提交按钮-->
+        <div class="bit-btn clearfix">
+            <button class="fl bit-resetbtn">重置</button>
+            <button class="fl bit-confirm">确定</button>
+        </div>
+        <!--底部提交按钮 end-->
+        <ul  class="filterTypebox">
+            <li class="flterTypeCell actived">
+                <span>行业</span>
+                <span class="filterTriggle"></span>
+            </li>
+            <li class="flterTypeCell">
+                <span>金额</span>
+                <span class="filterTriggle"></span>
+            </li>
+            <li class="flterTypeCell">
+                <span>时间</span>
+                <span class="filterTriggle"></span>
+            </li>
+            <li class="flterTypeCell">
+                <span>地区</span>
+                <span class="filterTriggle"></span>
+            </li>
+            <li class="flterTypeCell">
+                <span>类型</span>
+                <span class="filterTriggle"></span>
+            </li>
+        </ul>
+        <ul class="filterConbox">
+            <li class="filterConCell multiSelect actived"><!--行业-->
+                <div class="filterConCell-part clearfix">
+                    <div class=" filterLabelbox"><span class="filterLabel allSelect">全部</span></div>
+                </div>
+                <div class="allopitions">
+                    <ul class="filterConCell-part clearfix">
+                        <li class="djd-sx-opt">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">建筑工程</span>
+                        </li>
+                        <li class="djd-sx-opt ">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">勘察设计</span>
+                        </li>
+                        <li class="djd-sx-opt ">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">工程施工</span>
+                        </li>
+                        <li class="djd-sx-opt actived">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">监理咨询</span>
+                        </li>
+                        <li class="djd-sx-opt actived">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">材料设备</span>
+                        </li>
+                    </ul>
+                    <ul class="filterConCell-part clearfix">
+                        <li class="djd-sx-opt ">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">水利水电</span>
+                        </li>
+                        <li class="djd-sx-opt actived">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">发电工程</span>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="filterConCell"><!--金额-->
+                <div class="filterConCell-part clearfix">
+                    <div class="filterLabelbox"><span class="filterLabel actived">全部</span></div>
+                </div>
+                <!--价格区间-->
+                <div class="priceareabox">
+                    <div class="txtgray">价格区间</div>
+                    <div class="pricearea clearfix">
+                        <div class="fl">
+                            <input type="number"><span>万元</span>
+                        </div>
+                        <div class="fl cenline"></div>
+                        <div class="fl">
+                            <input type="number"><span>万元</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="filterConCell singleSelect"><!--时间-->
+                <div class="filterConCell-part clearfix nobd">
+                    <div class="filterLabelbox" style="width: auto;"><span class="filterLabel allSelect actived">全部</span></div>
+                    <div class="filterLabelbox"><span class="filterLabel">最近7天</span></div>
+                    <div class="filterLabelbox"><span class="filterLabel">最近30天</span></div>
+                    <div class="filterLabelbox"><span class="filterLabel">去年</span></div>
+                </div>
+                <div class="bid-timeselect">
+                    <label for="">开始时间：</label>
+                    <button id='demo2' data-options='{"type":"date","beginYear":1918,"endYear":2018}' class="btn mui-btn mui-btn-block">
+                        <span id="result1" class="resultbox">2018-01-19</span>
+                    </button>
+                    <label for="">结束时间：</label>
+                    <button id='demo3' data-options='{"type":"date","beginYear":1918,"endYear":2018}' class="btn mui-btn mui-btn-block">
+                        <span id="result2" class="resultbox">2018-04-19</span>
+                    </button>
+                </div>
+            </li>
+            <li class="filterConCell multiSelect area-filterConCell"><!--地区-->
+                <div class="filterConCell-part clearfix">
+                    <div class="filterLabelbox"><span class="filterLabel allSelect actived">全国</span></div>
+                </div>
+                <div class="allopitions">
+                    <div class="filterConCell-part clearfix">
+                        <span class="left-firtw">A</span>
+                        <div class="djd-sx-opt">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">安徽</span>
+                        </div>
+                    </div>
+                    <div class="filterConCell-part clearfix">
+                        <span class="left-firtw">B</span>
+                        <div class="djd-sx-opt">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">北京</span>
+                        </div>
+                    </div>
+                    <div class="filterConCell-part clearfix">
+                        <span class="left-firtw">C</span>
+                        <div class="djd-sx-opt">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">重庆</span>
+                        </div>
+                    </div>
+                    <div class="filterConCell-part clearfix">
+                        <span class="left-firtw">F</span>
+                        <div class="djd-sx-opt">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">福建</span>
+                        </div>
+                    </div>
+                    <div class="filterConCell-part clearfix">
+                        <span class="left-firtw">G</span>
+                        <div class="djd-sx-opt">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">广东</span>
+                        </div>
+                        <div class="djd-sx-opt">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">广西</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="filterConCell"><!--类型-->
+                <div class="filterConCell-part clearfix">
+                    <div class="filterLabelbox"><span class="filterLabel allSelect actived">全部</span></div>
+                </div>
+                <div class="allopitions">
+                    <div class="filterConCell-part clearfix">
+                        <div class="djd-sx-opt actived">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">拟建项目</span>
+                        </div>
+                    </div>
+                    <div class="filterConCell-part clearfix">
+                        <div class="djd-sx-opt actived">
+                            <span class="iconfont icon-checkcir-sel"></span>
+                            <span class="opt-txt">招标预告</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--招标搜索-筛选框 end-->
+</div>
+<script src="../js/mui.min.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/mui.picker.min.js"></script>
+<script>
+    mui('.mui-scroll-wrapper').scroll({
+        bounce: true,//滚动条是否有弹力默认是true
+        indicators: true //是否显示滚动条
+    });
+</script>
+<script>
+
+
+
+    (function($) {
+        $.init();
+        //设置弹框的高度
+        var phoneH = document.documentElement.clientHeight;
+        $('.bid-filter-box')[0].style.height=phoneH-44+'px';
+        $('#bidFilterBtn')[0].addEventListener('tap',function () {
+            if( $('.bid-filter-box')[0].classList.contains('actived')){
+                $('.bid-filter-box')[0].classList.remove('actived')
+            }else{
+                $('.bid-filter-box')[0].classList.add('actived')
+            }
+        });
+
+        //筛选-时间选择
+        var result = $('.resultbox');
+        var btns = $('.btn');
+        btns.each(function(i, btn) {
+            btn.addEventListener('tap', function() {
+                var _self = this;
+                if(_self.picker) {
+                    _self.picker.show(function (rs) {
+                        result[i].innerText =  rs.text;
+                        _self.picker.dispose();
+                        _self.picker = null;
+                    });
+                } else {
+                    var optionsJson = this.getAttribute('data-options') || '{}';
+                    var options = JSON.parse(optionsJson);
+                    var id = this.getAttribute('id');
+                    /*
+                     * 首次显示时实例化组件
+                     * 示例为了简洁，将 options 放在了按钮的 dom 上
+                     * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+                     */
+                    _self.picker = new $.DtPicker(options);
+                    _self.picker.show(function(rs) {
+                        /*
+                         * rs.value 拼合后的 value
+                         * rs.text 拼合后的 text
+                         * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+                         * rs.m 月，用法同年
+                         * rs.d 日，用法同年
+                         * rs.h 时，用法同年
+                         * rs.i 分（minutes 的第二个字母），用法同年
+                         */
+                        result[i].innerText = rs.text;
+                        /*
+                         * 返回 false 可以阻止选择框的关闭
+                         * return false;
+                         */
+                        /*
+                         * 释放组件资源，释放后将将不能再操作组件
+                         * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+                         * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+                         * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+                         */
+                        _self.picker.dispose();
+                        _self.picker = null;
+                    });
+                }
+
+            }, false);
+        });
+
+        //顶部筛选选项tab切换
+        var toplis = document.getElementsByClassName('filterTypebox')[0].getElementsByClassName('flterTypeCell');
+        var contlis = document.getElementsByClassName('filterConbox')[0].getElementsByClassName('filterConCell ');
+        var filterLen = toplis.length;
+        for(var i=0;i<filterLen;i++){
+            toplis[i].index = i;
+            toplis[i].addEventListener('tap',function () {
+                for(var j=0;j<filterLen;j++){
+                    toplis[j].classList.remove('actived');
+                    contlis[j].classList.remove('actived');
+                }
+                this.classList.add('actived');
+                contlis[this.index].classList.add('actived');
+            })
+        }
+    })(mui);
+
+</script>
+
+</body>
+</html>

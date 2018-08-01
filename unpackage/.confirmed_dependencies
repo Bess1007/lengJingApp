@@ -1,0 +1,97 @@
+{
+  "tab-main-lj.html": {
+    "resources": [
+      "index/indexLj.html"
+    ],
+    "refer": [
+      "index/indexLj.html",
+      "company.html",
+      "yujing/yujing.html",
+      "neikong/neikong.html",
+      "personalCenter/personal.html"
+    ]
+  },
+  "index/indexLj.html": {
+    "refer": [
+      "index/infotxt.html",
+      "ljCompany/companyDetails.html",
+      "zhaobiaoYq/ggxx.html",
+      "index/checkAllInfo.html"
+    ],
+    "resources": []
+  },
+  "ljCompany/riskinfos.html": {
+    "refer": [
+      "ljCompany/textPages/xzcfText.html"
+    ],
+    "resources": []
+  },
+  "ljCompany/companyDetails.html": {
+    "refer": [
+      "ljCompany/riskinfos.html"
+    ],
+    "resources": []
+  },
+  "neikong/neikong.html": {
+    "refer": [
+      "neikong/nk-tp.html",
+      "neikong/nk-qyxq.html"
+    ],
+    "resources": []
+  },
+  "yujing/yujing.html": {
+    "refer": [
+      "yujing/yj-qytp.html",
+      "yujing/yj-djdgl.html",
+      "yujing/yj-fxcx.html",
+      "yujing/yj-wdgz.html"
+    ],
+    "resources": []
+  },
+  "personalCenter/personal.html": {
+    "refer": [
+      "personalCenter/personal-xx.html",
+      "personalCenter/zhaotoubiaoDy.html",
+      "personalCenter/personal-fx.html",
+      "personalCenter/about.html",
+      "personalCenter/setting.html",
+      "dlzc/signIn.html",
+      "personalCenter/personal-grxx.html",
+      "personalCenter/personal-fwjl.html",
+      "personalCenter/personal-gz.html"
+    ],
+    "resources": []
+  },
+  "personalCenter/personal-xx.html": {
+    "refer": [
+      "personalCenter/personal-xx-txt.html"
+    ],
+    "resources": []
+  },
+  "personalCenter/about.html": {
+    "refer": [
+      "personalCenter/serviceAgreement.html",
+      "personalCenter/contactUs.html"
+    ],
+    "resources": []
+  },
+  "personalCenter/setting.html": {
+    "refer": [
+      "personalCenter/resetPassword.html",
+      "personalCenter/setting-zhgl.html"
+    ],
+    "resources": []
+  },
+  "dlzc/signIn.html": {
+    "refer": [
+      "dlzc/register.html"
+    ],
+    "resources": []
+  },
+  "personalCenter/personal-gz.html": {
+    "refer": [
+      "personalCenter/personal-gz-bjfz.html"
+    ],
+    "resources": []
+  }
+}

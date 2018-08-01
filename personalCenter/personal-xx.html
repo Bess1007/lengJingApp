@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html style="overflow: hidden">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link href="../css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/ljpublic.css">
+    <style>
+        
+    </style>
+</head>
+<body class="neikong-box">
+<header class="mui-bar mui-bar-nav bcWhiteNav" style="border-bottom: 0;">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">我的消息</h1>
+</header>
+<div class="mui-content">
+
+    <div id="slider" class="mui-slider mui-fullscreen">
+        <div id="sliderSegmentedControl" class=" mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" style="padding: 0;padding-bottom: 4px;">
+            <a class="mui-control-item mui-active" href="#item1mobile">
+                <span class="nk-tab">系统信息</span>
+            </a>
+            <a class="mui-control-item" href="#item2mobile">
+                <span class="nk-tab">个人信息</span>
+            </a>
+        </div>
+        <div class="mui-slider-group" style="top: 41px;">
+            <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+                <!--无数据时显示-->
+               <!-- <div class="nodata-box" style="top: 50%;transform: translateY(-70%)">
+                    <img src="../images/noMessage.png" alt="">
+                    <p>暂时还没有信息，晚点再来吧</p>
+                </div>-->
+                <!--无数据时显示 end-->
+
+                <div id="scroll1" class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <ul class="personal-info-box">
+                            <li class="pi-cell newInfo-badge">
+                                <span class="pi-time">8月28日 08:00</span>
+                                <div class="pi-detail">
+                                    <div class="pi-js">
+                                        <p class="pi-tit">充值优惠</p>
+                                        <p class="pi-introduce">
+                                            夏季排行榜来了！最新活动，充值优惠来袭
+                                        </p>
+                                    </div>
+                                    <div class="pi-bt-box clearfix">
+                                        <a href="personal-xx-txt.html" class="fl">查看详情 > </a>
+                                        <span class="iconfont icon-delete fr"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="pi-cell">
+                                <span class="pi-time">8月28日 08:00</span>
+                                <div class="pi-detail">
+                                    <div class="pi-js">
+                                        <p class="pi-tit">充值优惠</p>
+                                        <p class="pi-introduce">
+                                            夏季排行榜来了！最新活动，充值优惠来袭
+                                        </p>
+                                    </div>
+                                    <div class="pi-bt-box clearfix">
+                                        <a href="" class="fl">查看详情 > </a>
+                                        <span class="iconfont icon-delete fr"></span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="item2mobile" class="mui-slider-item mui-control-content">
+                <div id="scroll2" class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="../js/mui.min.js"></script>
+<script src="../js/app.js"></script>
+<script>
+    mui('.mui-scroll-wrapper').scroll({
+        bounce: false,//滚动条是否有弹力默认是true
+        indicators: false //是否显示滚动条
+    });
+</script>
+</body>
+</html>

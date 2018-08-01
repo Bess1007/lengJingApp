@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" class="bc_white">
+
+	<head>
+		<meta charset="utf-8">
+		<title>关系搜索</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--<link rel="stylesheet" href="css/zxapp.css">-->
+		<link rel="stylesheet" href="company/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/company.css">
+		<link rel="stylesheet" href="css/app.css">
+		<style>
+			.mui-navigate-right-dy:after {
+				top: 50%;
+				display: none;
+			}
+			.dy-jq-box .mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
+				font-size: 12px;
+			}
+			.mui-table-view-cell a {
+				font-size: 14px;
+			}
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				width: 36%;
+			}
+			.mui-content-dy {
+				background: #f2f7fc;
+				height: auto;
+			}
+			/*选项卡样式改*/
+			.mui-segmented-control .mui-control-item {
+				font-size: 12px;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				color: #177ef3;
+				border-color: #177ef3;
+			}
+
+			.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item{
+				border:0;
+			}
+			#sliderSegmentedControl {
+				padding-top: 10px;
+			}
+			.mui-slider-group {
+				margin-top: 10px;
+			}
+
+			/*12-29改*/
+			html{
+				background-color: #fff;
+			}
+			.mui-content {
+				background-color: #fff;
+			}
+			input[type=search].schComp {
+				border:0;
+				border-bottom:1px solid #333;
+			}
+			#sliderSegmentedControl {
+				border-bottom:1px solid #eee;
+			}
+
+
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+			<h1 class="mui-title">洞 察</h1>
+		</header>
+		<div class="mui-content bc_white">
+			<div id="slider" class="mui-slider" >
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item noLink" href="#item1mobile">
+						公司查询
+					</a>
+					<a class="mui-control-item noLink" href="#item2mobile">
+						企业全貌族谱
+					</a>
+					<a class="mui-control-item noLink" href="#item3mobile">
+						多节点关联
+					</a>
+					<a class="mui-control-item noLink" href="#item4mobile">
+						实质关联
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
+				<div class="mui-slider-group">
+					<!--公司查询-->
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<ul class="item-block zp-item-block">
+							<li>
+								<div class="mui-input-row">
+									<label for="" class="inlineB">搜索内容：</label>
+									<input type="text" class="inlineB ftenInputBox" value="" placeholder="股票代码/公司名称/个人名称加公司名称">
+								</div>
+							</li>
+							<li>
+								<div class="mui-input-row">
+									<label for="" class="inlineB">查询类型：</label>
+									<ul class="mui-table-view mui-table-view-radio zp-sel" style="display:table;">
+										<li class="mui-table-view-cell" style="margin-right: 12px;"><!--加mui-selected是为选中-->
+											<a class="mui-navigate-right" href="javascript:;">
+												股票/全称
+											</a>
+										</li>
+										<li class="mui-table-view-cell">
+											<a class="mui-navigate-right" href="javascript:;">
+												个人查询
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+
+						</ul>
+						<div style="padding:15px 10px;background-color: #fff;">
+							<button type="button" class="scpointsBtn" onclick="openCompanyDetaile()">搜 索</button>
+						</div>
+						<!--搜索历史-->
+						<div class="search_historyBox">
+							<div class="search_tit">
+								<span class="fa fa-clock-o"></span>
+								<span>最近搜索</span>
+							</div>
+							<ul class="search_history_ul">
+								<li class="search_history_cell">
+									<a href="">阿里巴巴（中国）网络技术有限公司</a>
+								</li>
+								<li class="search_history_cell">
+									<a href="">阿里巴巴（中国）网络技术有限公司</a>
+								</li>
+								<li class="search_history_cell">
+									<a href="">阿里巴巴（中国）网络技术有限公司</a>
+								</li>
+							</ul>
+						</div>
+						<!--清空所有搜索历史-->
+						<div class="clearAllHistory">
+							<span class="fa fa-trash-o"></span>
+							清空最近搜索
+						</div>
+					</div>
+					<!--企业全貌族谱-->
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<ul class="item-block zp-item-block">
+							<li>
+								<div class="mui-input-row">
+									<label for="" class="inlineB">搜索内容：</label>
+									<input type="text" class="inlineB ftenInputBox" value="" placeholder="公司名称/注册号/统一社会信用代码">
+								</div>
+							</li>
+							<li>
+								<div class="mui-input-row">
+									<label for="" class="inlineB">查询层级：</label>
+									<ul class="mui-table-view mui-table-view-radio zp-sel" style="display:table;">
+										<li class="mui-table-view-cell"><!--加mui-selected是为选中-->
+											<a class="mui-navigate-right" href="javascript:;">
+												1
+											</a>
+										</li>
+										<li class="mui-table-view-cell">
+											<a class="mui-navigate-right" href="javascript:;">
+												2
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-selected">
+											<a class="mui-navigate-right" href="javascript:;">
+												3
+											</a>
+										</li>
+										<li class="mui-table-view-cell">
+											<a class="mui-navigate-right" href="javascript:;">
+												4
+											</a>
+										</li>
+										<li class="mui-table-view-cell">
+											<a class="mui-navigate-right" href="javascript:;">
+												5
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="mui-input-row">
+									<label for="" class="inlineB">关系类型：</label>
+									<form class="mui-input-group fl gxlx-box">
+										<div class="mui-input-row mui-checkbox mui-left">
+
+											<input name="checkbox" value="投资关联" type="checkbox" checked>
+											<label>投资关联</label>
+										</div>
+										<div class="mui-input-row mui-checkbox mui-left">
+											<input name="checkbox" value="任职关联" type="checkbox" checked>
+											<label>任职关联</label>
+										</div>
+										<div class="mui-input-row mui-checkbox mui-left">
+											<input name="checkbox" value="办公地址疑似关联" type="checkbox" checked>
+											<label>办公地址疑似关联</label>
+										</div>
+										<div class="mui-input-row mui-checkbox mui-left">
+											<input name="checkbox" value="电话疑似关联" type="checkbox" checked>
+											<label>电话疑似关联</label>
+										</div>
+									</form>
+								</div>
+							</li>
+						</ul>
+						<div style="padding:15px 10px;background-color: #fff;">
+							<button type="button" class="scpointsBtn">搜 索</button>
+						</div>
+					</div>
+					<!--多节点关联-->
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<ul class="item-block zp-item-block">
+							<li>
+								<div class="mui-input-row">
+									<label for="" class="inlineB">搜索内容：</label>
+									<ul class="ptsCtScBox">
+										<li>
+											<label for="">从 </label><input type="text" class="ptInput ftenInputBox" id="ptInput1" placeholder="添加第一个公司" >
+										</li>
+										<li>
+											<label for="">到 </label><input type="text" class="ptInput ftenInputBox" id="ptInput2" placeholder="添加第二个公司">
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="mui-input-row">
+									<label for="" class="inlineB">查询层级：</label>
+									<ul class="mui-table-view mui-table-view-radio zp-sel" style="display:table;">
+										<li class="mui-table-view-cell"><!--加mui-selected是为选中-->
+											<a class="mui-navigate-right" href="javascript:;">
+												1
+											</a>
+										</li>
+										<li class="mui-table-view-cell">
+											<a class="mui-navigate-right" href="javascript:;">
+												2
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-selected">
+											<a class="mui-navigate-right" href="javascript:;">
+												3
+											</a>
+										</li>
+										<li class="mui-table-view-cell">
+											<a class="mui-navigate-right" href="javascript:;">
+												4
+											</a>
+										</li>
+										<li class="mui-table-view-cell">
+											<a class="mui-navigate-right" href="javascript:;">
+												5
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="mui-input-row">
+									<label for="" class="inlineB">关系类型：</label>
+									<form class="mui-input-group fl gxlx-box">
+										<div class="mui-input-row mui-checkbox mui-left">
+
+											<input name="checkbox" value="投资关联" type="checkbox" checked>
+											<label>投资关联</label>
+										</div>
+										<div class="mui-input-row mui-checkbox mui-left">
+											<input name="checkbox" value="任职关联" type="checkbox" checked>
+											<label>任职关联</label>
+										</div>
+										<div class="mui-input-row mui-checkbox mui-left">
+											<input name="checkbox" value="办公地址疑似关联" type="checkbox" checked>
+											<label>办公地址疑似关联</label>
+										</div>
+										<div class="mui-input-row mui-checkbox mui-left">
+											<input name="checkbox" value="电话疑似关联" type="checkbox" checked>
+											<label>电话疑似关联</label>
+										</div>
+									</form>
+								</div>
+							</li>
+						</ul>
+						<div style="padding:15px 10px;background-color: #fff;">
+							<button type="button" class="scpointsBtn grayBtn" id="scpointBtn">搜 索</button>
+						</div>
+					</div>
+					<!--实质关联-->
+					<div id="item4mobile" class="mui-slider-item mui-control-content" style="padding: 30px">
+						<div class="mui-input-row mui-search">
+							<input type="search" class="mui-input-clear schComp" placeholder="公司名称/注册号/统一社会信用代码">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--公司模糊查询结果-->
+		<div class="matchCompanyBox" style="position: absolute;top:0;left: 0;background: #f5f5f5;z-index: 10000">
+			<div class="mui-bar mui-bar-nav bc-white-inp bcWhiteNav" style="position: fixed;top:0;left: 0;">
+				<span class=" mui-icon mui-icon-closeempty mui-pull-left" id="closematchCompany" style="color: #666;font-weight: bold;"></span>
+				<h1 class="mui-title">
+            <input type="text" class="company_hd_sc" placeholder="公司股票代码/公司名称/个人名称加公司名称" value="阿里">
+        </h1>
+			</div>
+			<div class="" style="padding-top: 44px;">
+				<div class="matchCompany_num">
+					<span class="iconfont icon-jieshao"></span> 匹配到
+					<i class="textred fwBold">1000</i>家公司：
+				</div>
+				<ul class="searchCompany_rs">
+					<li class="searchCompany_rsCell ">
+						<div class="clearfix">
+							<div class="leftCompanyIcoBox fl">
+								<span class="leftCompanyIco bc_red">北</span>
+							</div>
+							<div class="fl rightCompanyInfo">
+								<div class="info_cnameBox clearfix">
+									<span class="chooseC fr">选择</span>
+									<span class="info_cname fl">北京天和融汇投资基金管理有限公司北京天和融汇投资基金管理有限公司</span>
+								</div>
+								<div class="info_cnameBox clearfix info_fddbr">
+									<span class="info_cname fl">法定代表人：梁志祥</span>
+								</div>
+
+							</div>
+						</div>
+						<div class="companysname">
+							<span class="iconfont icon-huaxiangfenxi1"></span> 公司简称：
+							<i class="textred">阿里</i>
+						</div>
+					</li>
+					<li class="searchCompany_rsCell ">
+						<div class="clearfix">
+							<div class="leftCompanyIcoBox fl">
+								<span class="leftCompanyIco bc_orange">杭</span>
+							</div>
+							<div class="fl rightCompanyInfo">
+								<div class="info_cnameBox clearfix">
+									<span class="chooseC fr">选择</span>
+									<span class="info_cname fl">杭州<i class="textred">阿里</i>创业投资有限公司</span>
+								</div>
+								<div class="info_cnameBox clearfix info_fddbr">
+									<span class="info_cname fl">法定代表人：梁志祥</span>
+								</div>
+
+							</div>
+						</div>
+						<div class="companysname">
+							<span class="iconfont icon-huaxiangfenxi1"></span> 公司简称：
+							<i class="textred">阿里</i>巴巴
+						</div>
+					</li>
+					<li class="searchCompany_rsCell ">
+						<div class="clearfix">
+							<div class="leftCompanyIcoBox fl">
+								<span class="leftCompanyIco bc_yellow">杭</span>
+							</div>
+							<div class="fl rightCompanyInfo">
+								<div class="info_cnameBox clearfix">
+									<span class="chooseC fr">选择</span>
+									<span class="info_cname fl">杭州<i class="textred">阿里</i>创业投资有限公司</span>
+								</div>
+								<div class="info_cnameBox clearfix info_fddbr">
+									<span class="info_cname fl">法定代表人：梁志祥</span>
+								</div>
+
+							</div>
+						</div>
+						<div class="companysname">
+							<span class="iconfont icon-huaxiangfenxi1"></span> 公司简称：
+							<i class="textred">阿里</i>巴巴
+						</div>
+					</li>
+					<li class="searchCompany_rsCell ">
+						<div class="clearfix">
+							<div class="leftCompanyIcoBox fl">
+								<span class="leftCompanyIco bc_green">杭</span>
+							</div>
+							<div class="fl rightCompanyInfo">
+								<div class="info_cnameBox clearfix">
+									<span class="chooseC fr">选择</span>
+									<span class="info_cname fl">杭州<i class="textred">阿里</i>创业投资有限公司</span>
+								</div>
+								<div class="info_cnameBox clearfix info_fddbr">
+									<span class="info_cname fl">法定代表人：梁志祥</span>
+								</div>
+
+							</div>
+						</div>
+						<div class="companysname">
+							<span class="iconfont icon-huaxiangfenxi1"></span> 公司简称：
+							<i class="textred">阿里</i>巴巴
+						</div>
+					</li>
+					<li class="searchCompany_rsCell ">
+						<div class="clearfix">
+							<div class="leftCompanyIcoBox fl">
+								<span class="leftCompanyIco bc_cyan">杭</span>
+							</div>
+							<div class="fl rightCompanyInfo">
+								<div class="info_cnameBox clearfix">
+									<span class="chooseC fr">选择</span>
+									<span class="info_cname fl">杭州<i class="textred">阿里</i>创业投资有限公司</span>
+								</div>
+								<div class="info_cnameBox clearfix info_fddbr">
+									<span class="info_cname fl">法定代表人：梁志祥</span>
+								</div>
+
+							</div>
+						</div>
+						<div class="companysname">
+							<span class="iconfont icon-huaxiangfenxi1"></span> 公司简称：
+							<i class="textred">阿里</i>巴巴
+						</div>
+					</li>
+					<li class="searchCompany_rsCell ">
+						<div class="clearfix">
+							<div class="leftCompanyIcoBox fl">
+								<span class="leftCompanyIco bc_blue">杭</span>
+							</div>
+							<div class="fl rightCompanyInfo">
+								<div class="info_cnameBox clearfix">
+									<span class="chooseC fr">选择</span>
+									<span class="info_cname fl">杭州<i class="textred">阿里</i>创业投资有限公司</span>
+								</div>
+								<div class="info_cnameBox clearfix info_fddbr">
+									<span class="info_cname fl">法定代表人：梁志祥</span>
+								</div>
+
+							</div>
+						</div>
+						<div class="companysname">
+							<span class="iconfont icon-huaxiangfenxi1"></span> 公司简称：
+							<i class="textred">阿里</i>巴巴
+						</div>
+					</li>
+					<li class="searchCompany_rsCell ">
+						<div class="clearfix">
+							<div class="leftCompanyIcoBox fl">
+								<span class="leftCompanyIco bc_purple">杭</span>
+							</div>
+							<div class="fl rightCompanyInfo">
+								<div class="info_cnameBox clearfix">
+									<span class="chooseC fr">选择</span>
+									<span class="info_cname fl">杭州<i class="textred">阿里</i>创业投资有限公司</span>
+								</div>
+								<div class="info_cnameBox clearfix info_fddbr">
+									<span class="info_cname fl">法定代表人：梁志祥</span>
+								</div>
+
+							</div>
+						</div>
+						<div class="companysname">
+							<span class="iconfont icon-huaxiangfenxi1"></span> 公司简称：
+							<i class="textred">阿里</i>巴巴
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--公司模糊查询结果end-->
+		<script src="js/mui.min.js"></script>
+		<script src="js/app.js"></script>
+		<!--洞察相关js-->
+		<script>
+			/*****多节点关联判断是否输入两个公司*****/
+
+			for(var i = 0; i < document.getElementsByClassName('ptInput').length; i++) {
+				document.getElementsByClassName('ptInput')[i].addEventListener("input", function() {
+					if(document.getElementsByClassName('ptInput')[0].value != '' && document.getElementsByClassName('ptInput')[1].value != '') {
+						mui('#scpointBtn')[0].classList.remove('grayBtn')
+					} else {
+						mui('#scpointBtn')[0].classList.add('grayBtn')
+					}
+				})
+			}
+			document.getElementById('scpointBtn').onclick = function() {
+				if(this.classList.contains('grayBtn')) {
+					mui.alert('请输入两个企业名称')
+				}
+			}
+
+			/*关闭模糊查询结果弹框*/
+			mui('body').on('tap', '#closematchCompany', function() {
+				document.getElementsByClassName("matchCompanyBox")[0].style.display = 'none';
+			})
+			/*打开模糊查询结果弹框*/
+			mui('body').on('click', '.ftenInputBox', function() {
+				document.getElementsByClassName("matchCompanyBox")[0].style.display = 'block';
+			})
+			var winheight = window.screen.availHeight;
+			document.getElementsByClassName("matchCompanyBox")[0].style.minHeight = winheight + 'px';
+		</script>
+		<!--洞察相关js end-->
+	</body>
+
+</html>

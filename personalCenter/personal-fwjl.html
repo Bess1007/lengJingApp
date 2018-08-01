@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html style="overflow: hidden">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link href="../css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/ljpublic.css">
+    <style>
+        
+    </style>
+</head>
+<body class="neikong-box">
+<header class="mui-bar mui-bar-nav bcWhiteNav" style="border-bottom: 0;">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">访问记录</h1>
+</header>
+<div class="mui-content">
+
+    <div id="slider" class="mui-slider mui-fullscreen">
+        <div id="sliderSegmentedControl" class=" mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" style="padding: 0;padding-bottom: 4px;">
+            <a class="mui-control-item mui-active" href="#item1mobile">
+                <span class="nk-tab">企业</span>
+            </a>
+            <a class="mui-control-item" href="#item2mobile">
+                <span class="nk-tab">人员</span>
+            </a>
+        </div>
+        <div class="mui-slider-group" style="top: 41px;">
+            <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+                <!--无数据时显示-->
+              <!--  <div class="nodata-box" style="height: 180px;top: 50%;transform: translateY(-70%)">
+                    <img src="../images/noInfo.png" alt="">
+                    <p>暂时还没有信息，晚点再来吧</p>
+                </div>-->
+                <!--无数据时显示 end-->
+
+                <div class="fw-tit clearfix">
+                    <span class="fl">访问的企业</span>
+                    <span class="fr iconfont icon-delete"></span>
+                </div>
+                <div id="scroll1" class="mui-scroll-wrapper" style="top: 31px;">
+                    <div class="mui-scroll">
+                        <ul class="lj-table-view">
+                            <li class="lj-table-view-cell">
+                                <a href="" class="lj-view-cell-link">
+                                    <span class="lj-view-inner-txt">腾讯科技（深圳）有限公司（13）</span>
+                                    <span class="view-right-time">2017-12-14</span>
+                                </a>
+                            </li>
+                            <li class="lj-table-view-cell">
+                                <a href="" class="lj-view-cell-link">
+                                    <span class="lj-view-inner-txt">腾讯科技（深圳）有限公司</span>
+                                    <span class="view-right-time">2017-12-14</span>
+                                </a>
+                            </li>
+                            <li class="lj-table-view-cell">
+                                <a href="" class="lj-view-cell-link">
+                                    <span class="lj-view-inner-txt">腾讯科技（深圳）有限公司</span>
+                                    <span class="view-right-time">2017-12-14</span>
+                                </a>
+                            </li>
+                            <li class="lj-table-view-cell">
+                                <a href="" class="lj-view-cell-link">
+                                    <span class="lj-view-inner-txt">腾讯科技（深圳）有限公司</span>
+                                    <span class="view-right-time">2017-12-14</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="item2mobile" class="mui-slider-item mui-control-content">
+                <div id="scroll2" class="mui-scroll-wrapper">
+                    <div class="fw-tit clearfix">
+                        <span class="fl">访问的人员</span>
+                        <span class="fr iconfont icon-delete"></span>
+                    </div>
+                    <div class="mui-scroll">
+                        <ul class="lj-table-view">
+                            <li class="lj-table-view-cell">
+                                <a href="" class="lj-view-cell-link">
+                                    <span class="lj-view-inner-txt">雷军（13）</span>
+                                    <span class="view-right-time">2017-12-14</span>
+                                </a>
+                            </li>
+                            <li class="lj-table-view-cell">
+                                <a href="" class="lj-view-cell-link">
+                                    <span class="lj-view-inner-txt">马化腾（13）</span>
+                                    <span class="view-right-time">2017-12-14</span>
+                                </a>
+                            </li>
+                            <li class="lj-table-view-cell">
+                                <a href="" class="lj-view-cell-link">
+                                    <span class="lj-view-inner-txt">李庆东（3）</span>
+                                    <span class="view-right-time">2017-12-14</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="../js/mui.min.js"></script>
+<script src="../js/app.js"></script>
+<script>
+    mui('.mui-scroll-wrapper').scroll({
+        bounce: false,//滚动条是否有弹力默认是true
+        indicators: false //是否显示滚动条
+    });
+</script>
+</body>
+</html>

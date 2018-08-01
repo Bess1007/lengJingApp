@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link href="../css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/ljpublic.css">
+    <style>
+        .gr-right-txt img {
+            width: 45px;
+            height: 45px;
+        }
+        .head-img-box {
+            display: inline-block;
+            text-align: center;
+            line-height: 45px;
+            height: 45px;
+            width: 45px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #5084ef;
+        }
+    </style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav bcWhiteNav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">个人信息</h1>
+</header>
+<div class="mui-content">
+    <ul class="grxx-box-list">
+        <li class="grxx-cell">
+            <span class="fl gr-left-txt">头像</span>
+            <!--<div class="fr gr-right-txt"><span class="iconfont icon-user"></span></div>-->
+            <div class="fr gr-right-txt">
+                <div class="head-img-box">
+                    <img src="../images/manhead.png" alt=""><!--未登录时的默认头像-->
+                </div>
+            </div>
+        </li>
+        <li class="grxx-cell" id="editName">
+            <span class="fl gr-left-txt">真实姓名</span>
+            <div class="fr gr-right-txt">周鸿祎</div>
+        </li>
+    </ul>
+    <ul class="grxx-box-list">
+        <li class="grxx-cell">
+            <span class="fl gr-left-txt">手机号码</span>
+            <div class="fr gr-right-txt">13345674489</div>
+        </li>
+        <li class="grxx-cell">
+            <span class="fl gr-left-txt">邮箱</span>
+            <div class="fr gr-right-txt">绑定邮箱</div>
+        </li>
+    </ul>
+    <ul class="grxx-box-list">
+        <li class="grxx-cell">
+            <span class="fl gr-left-txt">地址</span>
+            <div class="fr gr-right-txt"></div>
+        </li>
+        <li class="grxx-cell">
+            <span class="fl gr-left-txt">公司</span>
+            <div class="fr gr-right-txt">北京奇虎科技有限公司</div>
+        </li>
+        <li class="grxx-cell">
+            <span class="fl gr-left-txt">行业</span>
+            <div class="fr gr-right-txt"></div>
+        </li>
+    </ul>
+
+    <!--修改姓名弹框-->
+    <div class="sx-box add-new-group" style="display: none">
+        <div class="blackbc"></div>
+        <div class="sxk ang-innerbox">
+            <div class="sx-tit">真实姓名</div>
+            <div class="cen-filter-box">
+                <input type="text" class="newgrouptxt" placeholder="请输入真实姓名" value="周鸿祎">
+            </div>
+            <!--底部按钮-->
+            <div class="sx-btns">
+                <button>取消</button>
+                <button>确定</button>
+            </div>
+        </div>
+    </div>
+    <!--修改姓名弹框 end-->
+</div>
+<script src="../js/mui.min.js"></script>
+<script src="../js/app.js"></script>
+<script>
+    /*关闭弹框*/
+    function closeFilterBox() {
+        mui('.sx-box')[0].style.display = 'none'
+    }
+    mui('.sx-box .blackbc')[0].addEventListener('tap',function () {
+        closeFilterBox()
+    })
+    mui('#editName')[0].addEventListener('tap',function () {
+        mui('.sx-box')[0].style.display = 'block'
+    })
+    mui('.sx-btns').on('tap','button',function () {
+        closeFilterBox()
+    })
+</script>
+</body>
+</html>

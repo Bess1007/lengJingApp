@@ -1,0 +1,1489 @@
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #999;
+}
+::-moz-placeholder { /* WebKit browsers */
+    color: #999;
+}
+:-moz-placeholder { /* WebKit browsers */
+    color: #999;
+}
+:-ms-input-placeholder { /* WebKit browsers */
+    color: #999;
+}
+
+
+.mui-table-view-radio .mui-table-view-cell>a:not(.mui-btn) {
+    margin-right: -65px;
+    width: auto;
+    display: inline-block;
+    padding: 11px 15px 11px 38px;
+}
+.mui-table-view-radio .mui-table-view-cell .mui-navigate-right:after {
+    font-size: 30px;
+    font-weight: 600;
+    left: 19px;
+    content: '.';
+    color: #ccc;
+    top: 16px;
+}
+.mui-table-view-radio .mui-table-view-cell.mui-selected .mui-navigate-right:after {
+    content: '\e472';
+    top: 22px;
+    color: #177ef3;
+    left: 9px;
+}
+.mui-table-view-radio	 .mui-table-view-cell {
+    display:table-cell;
+}
+input[type=search].schComp {
+    border-radius: 0;
+    border-color: #f0f0f0;
+    background-color: transparent;
+}
+
+
+.item-block {
+    padding:10px 0;
+    background-color: #fff;
+}
+.item-block li {
+    border-bottom:1px solid #f0f0f0;
+}
+.item-block li label {
+    width:auto;
+}
+.item-block li input {
+    width:auto;background-color: transparent;border: 0;
+    margin-bottom: 0;
+    color: #444;
+    float: left;
+}
+.zp-sel.mui-table-view-radio .mui-table-view-cell {
+    display:inline-block;
+}
+.zp-sel.mui-table-view-radio .mui-table-view-cell a {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: #efefef;
+    color: #b3b3b3;
+    border-radius:3px;
+}
+.zp-sel.mui-table-view-radio .mui-table-view-cell.mui-selected .mui-navigate-right:after {
+    top:11px;
+    color: #fff;
+}
+.zp-sel.mui-table-view-radio .mui-table-view-cell.mui-selected .mui-navigate-right {
+    background-color: #1b92e6;
+    color: #fff;
+}
+.zp-sel.mui-table-view-radio .mui-table-view-cell .mui-navigate-right:after {
+    top: 5px;
+}
+.zp-sel li {
+    border-bottom: 0;
+    padding: 6px 15px;
+}
+.zp-sel .mui-table-view-cell:after {
+    display:none;
+ }
+.zp-sel:after {
+    display:none;
+}
+.zp-item-block li input {
+    width: 100%;
+    padding-left: 104px;
+    margin-left: -104px;
+}
+
+
+.mui-checkbox input[type=checkbox]:checked:before {
+    content: '\e472';
+    font-size: 30px;
+    font-weight: 600;
+    position: absolute;
+    top:-7px;
+    left: 92px;
+    color: #fff;
+}
+.mui-checkbox input[type=checkbox]:before {
+    content: '.';
+    font-size: 30px;
+    font-weight: 600;
+    top:-13px;
+    color: #ccc;
+    position: absolute;
+}
+.gxlx-box .mui-checkbox input[type=checkbox]:checked  + label {
+    background-color: #1b92e6;
+    color: #fff;
+}
+.zp-item-block .mui-checkbox {
+    display:inline-block;
+    height:auto;
+    margin-top: 8px;
+    margin-right: 12px;
+}
+.mui-input-row .gxlx-box {
+    width: 100%;
+    padding-left: 104px;
+    margin-left: -104px;
+    border: 0;
+    background: transparent;
+}
+.mui-input-row .gxlx-box:after,.mui-input-row .gxlx-box:before {display:none}
+.gxlx-box .mui-input-row:after {
+    display: none;
+}
+.gxlx-box .mui-checkbox.mui-left label {
+    background-color: #efefef;
+    height: 24px;
+    line-height: 24px;
+    color: #b3b3b3;
+    padding:0 15px 0 38px;
+    border-radius:3px;
+    font-size: 12px;
+}
+
+.ptsCtScBox {
+    float: left;
+    width: 100%;
+    padding-left: 104px;
+    margin-left:-104px;
+}
+.ptsCtScBox li {
+    display: block;
+    overflow: hidden;
+}
+.ptsCtScBox li label {
+    font-size: 14px;
+    color: #999;
+}
+.scpointsBtn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 32px;
+    background-color: #2888f3;
+    color: #ffffff;
+    border:0;
+    padding: 6px 12px;
+    transition-duration: .2s;
+    border-radius: 3px;
+}
+.grayBtn {
+    background-color: #efefef;
+    color: #b3b3b3;
+}
+
+/***********公司详情页**********/
+footer {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #f9f9f9;
+    z-index: 100;
+    border-top:1px solid #e0e0e0;
+}
+footer .foottableul {
+    width: 100%;
+    display: table;
+}
+.tcli {
+    width: 50%;
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+.tcli a {
+    display: block;
+    padding: 5px 0;
+    color: #333333;
+}
+.tcli .cIco {
+    margin-bottom: 3px;
+    font-size: 18px;
+    color: #666666;
+}
+
+.companyHead {
+    padding: 16px 10px;
+    background-color: #fff;
+    display: table;
+    width: 100%;
+}
+.companyHead .tc {
+    display: table-cell;
+    vertical-align: top;
+}
+.pl12 {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.companynamebox {
+    position: relative;
+    text-align: left;
+}
+.cname {
+    font-size: 16px;
+    color: #333;
+    display: inline-block;
+    line-height:24px;
+    /* padding-right: 60px; */
+    /* margin-left: 12px; */
+}
+.info2 {
+    font-size: 12px;
+    margin-top: 15px;
+}
+.lightgray {
+    color: #9f9f9f;
+}
+.verticalline {
+    color: #ebeaea;
+    margin: 0 7px;
+}
+.info3 {
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 10px;
+}
+.infozt {
+    float: left;
+    background-color: #5084ef;
+    color: #fff;
+    border-radius: 2px;
+    padding: 0 7px;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+}
+.infozt2 {
+    margin-left:5px;
+    background-color: #ffa902;
+}
+.companypart2 {
+    padding-left: 87px;
+    padding-right: 10px;
+    height: 46px;
+    line-height: 46px;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+    border-top:1px solid #e9e9e9;
+}
+.companypart2 .tc {
+    display: table-cell;
+    font-size: 12px;
+}
+.companypart2 span {
+    color: #999;
+    font-size: 12px;
+}
+.companypart2 .icon-update {
+    color: #0ecca1;
+}
+.companypart2 .pj-btn {
+    font-size: 12px;
+    color: #5693ef;
+    text-decoration: underline;
+}
+.companypart2 .pj-btn.pj-rs {
+    text-decoration: none;
+    color: #ff532b;
+}
+.mr8 {
+    margin-right: 8px;
+}
+.textgreen {
+    color: #69AA46;
+}
+.textred {
+    color: #DD5A43;
+}
+.textblue {
+    color: #2b7dbc;
+}
+.info3 {
+    overflow: hidden;
+    padding: 8px 0;
+    margin-top: 0;
+}
+.info3 span {
+    font-size: 14px;
+    line-height: 24px;
+    float: left;
+    white-space: nowrap;
+}
+
+.touchw span {
+    font-size: 14px;
+}
+span.lico {
+    font-size: 18px;
+    color: #a8abb5;
+    margin-right: 8px;
+    position: relative;
+    top: 3px;
+    font-weight:normal;
+}
+.mui-icon.lico {
+    color: #a8abb5;
+}
+.companypart3 {
+    margin-bottom: 5px;
+}
+
+.infoHead {
+    width: 100%;
+    background-color: #fff;
+    border-bottom:1px solid #e9e9e9;
+    padding: 0 15px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 16px;
+    color: #535353;
+    font-weight: 400;
+}
+.infobody {
+    background-color: #fff;
+}
+.infoeles {
+    float: left;
+    width: 25%;
+    height: 108px;
+    background-color: #fff;
+    border-right: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+    text-align: center;
+    padding: 0 3px;
+    font-size: 12px;
+}
+.fico {
+    display: block;
+    font-size: 30px;
+    color: #2b7dbc;
+    /* line-height: 66px; */
+    margin: 30px 0 20px;
+    position: relative;
+    height: 22px;
+    line-height: 22px;
+}
+.fico i {
+    position: absolute;
+    top: -10px;
+    right: 14px;
+    color: #333;
+    font-size: 10px;
+}
+.infoinner {
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+}
+.commonStyleBox {
+    margin-bottom: 5px;
+}
+/*公司动态图标颜色*/
+.companyDynamic .fico {
+    color: #2eb5a9;
+}
+/*公司概况下图标颜色*/
+.companySurvey .fico {
+    color: #0fbbe9;
+}
+
+/*公司基本信息下图标颜色*/
+.companyBaseInfo .fico {
+    color: #1d8fe1;
+}
+
+/*公司高管情况下图标颜色*/
+.companyExecutive .fico {
+    color: #7686de;
+}
+
+/*公司财务信息下图标颜色*/
+.companyFinanceInfo .fico {
+    /*color: #e3db5d;*/
+    color: #e99307;
+}
+
+/*公司风险信息下图标颜色*/
+.companyRiskInfo .fico {
+    color: #ffa902;
+}
+
+/*公司风险评测下图标颜色*/
+.companyEvaluate .fico {
+    color: #f39826;
+}
+
+/*公司F10下图标颜色*/
+.companyF10 .fico {
+    color: #0f7ab8;
+}
+
+/*没有内容时图标颜色*/
+.graypart .fico,.graypart .fico i {
+    color: #999999;
+}
+/***********公司详情页 end**********/
+
+/****************公司动态****************/
+/*****时间轴*****/
+.cBox {
+    padding: 9px 7px;
+    padding-bottom: 0;
+    padding-right: 0;
+    background: #fff;
+    margin-top: 2px;
+}
+.changebox {
+    padding: 0 16px;
+    border-left: 2px solid #dfe0e1;
+    width: 100%;
+}
+.nodeBox {
+    padding-bottom: 36px;
+}
+.clittleboxs {
+    border-bottom: 2px solid #f9f9f9;
+}
+.timetit {
+    position: relative;
+    text-align: left;
+    font-size: 12px;
+    line-height: 12px;
+    color: #a9afbe;
+    margin-bottom: 10px;
+}
+.node {
+    position: absolute;
+    top: 0;
+    left: -23px;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #e4e9ea;
+    border-radius: 6px;
+    background: #fff;
+    text-align: center;
+}
+.node i {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #d4dcdf;
+    border-radius: 3px;
+    margin-bottom: 2px;
+}
+.clittleboxs.tablebox {
+    padding: 12px 0 4px 0;
+    width: 100%;
+}
+.tablebox {
+    display: table;
+}
+.clittleboxs {
+    border-bottom: 2px solid #f9f9f9;
+}
+.clittleboxs .tableCellbox {
+    text-align: left;
+}
+.br1 {
+    border-right: 1px solid #f6f6f6;
+    padding-right: 17px;
+}
+.tableCellbox {
+    display: table-cell;
+}
+.tableCellbox span {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+}
+.tableCellbox span {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}
+.mch {
+    margin: 4px 0 15px;
+}
+.textgray {
+    color: #8c8c8c;
+}
+.ml18 {
+    padding-left: 18px;
+}
+/*****时间轴end*****/
+
+/*****公司画像*****/
+.blocks {
+    width: 100%;
+}
+.blocks .trbox {
+    padding: 12px 16px;
+    vertical-align: top;
+    background-color: #fff;
+    margin-bottom: 1px;
+    font-size: 14px;
+    border: 0;
+    display: block;
+}
+.blocks .trbox .tdbox {
+    display: inline-block;
+    vertical-align: top;
+}
+.blocks .trbox .tdbox:nth-child(1) {
+    width: 30%;
+    text-align: left;
+}
+.blocks .trbox .tdbox:nth-child(2) {
+    width: 66%;
+    text-align: left;
+}
+
+/*****公司画像end *****/
+
+/*****财务摘要*****/
+.cwzyBox {
+    width: 100%;
+    background-color: #fff;
+}
+.ulTable {
+    display:table;
+    width: 100%;
+}
+.tCellLi {
+    display:table-cell;
+}
+.cw-time-tit {
+    text-align: center;
+    font-size: 14px;
+    font-weight:bold;
+    color: #0c9cd9;
+    height: 32px;
+    line-height: 32px;
+    border-bottom: 2px solid #f0f0f0;
+}
+.cw-inner {
+    padding:12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+}
+.cw-inners-cell {
+    display:block;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 6px;
+}
+.cw-inners-cell-num {
+    color: #9e9e9e;
+}
+.left-tCellLi .cw-inner ,.left-tCellLi .cw-time-tit{
+    border-right:1px solid #f0f0f0;
+}
+/*****财务摘要end *****/
+
+/*****停牌天数*****/
+.tp-survey {
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.tp-survey-span-box {
+    display:inline-block;
+    padding:0 14px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+}
+.tp-survey-span-box i {
+    color: #f36d40;
+}
+.common-nodeBox {
+    display:block;
+    background-color: #fff;
+    padding: 12px 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    position: relative;
+}
+.nodeBox-lis {
+    line-height: 20px;
+    margin: 4px 0;
+    overflow: hidden;
+}
+.labelBox,.rightTxtBox {
+    float: left;
+}
+.rightTxtBox {
+    color: #8c8c8c;
+}
+.textblue {
+    color: #2b7dbc;
+} 
+/*****停牌天数end*****/
+
+/*****有关事件*****/
+.dynamic-event .tableCellbox span {
+    width: 100%;
+    word-break:break-all;
+    display:-webkit-box;
+    -webkit-line-clamp:6;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+.positiveEvent {
+    display:inline-block;
+    background-color: #1b92e6;
+    color: #fff;
+    font-size: 12px;
+    padding:0 6px;
+    height: 16px;
+    line-height: 16px;
+}
+.negativeEvent {
+    display:inline-block;
+    background-color: #ff4242;
+    color: #fff;
+    font-size: 12px;
+    padding:0 6px;
+    height: 16px;
+    line-height: 16px;
+}
+/*****有关事件end*****/
+
+/****************公司动态end ****************/
+
+
+/****************基本信息 ****************/
+
+/******高管信息*****/
+.nodeBox-lis.pd12 {
+    padding: 12px;
+    padding-bottom: 0;
+}
+.ggxx-li {
+    background-color: #fff;
+    box-shadow: 8px 4px 10px #ccc;
+    margin-bottom: 15px;
+}
+.ggxx-dwtz {
+    padding:0 12px;
+    display:block;
+    text-align: left;
+    position: relative;
+    line-height: 34px;
+    border-top:1px solid #f0f0f0;
+}
+.ggxx-dwtz .fa-angle-right {
+    position: absolute;
+    height: 100%;
+    line-height: 34px;
+    font-size: 18px;
+    width: 30px;
+    text-align: center;
+    top:0;
+    right: 0;
+    color: #999;
+}
+/******高管信息end*****/
+
+/******高管信息详细信息列表页*****/
+.inverstInfolist {
+    margin-top: 10px;
+}
+.inverstInfolist .ggxx-li {
+    margin-bottom: 10px;
+    box-shadow: none;
+}
+.inverstInfolist .ggxx-dwtz {
+    line-height: 40px;
+}
+.inverstInfolist .ggxx-dwtz .fa-angle-right {
+    line-height: 40px;
+}
+.inverst-num {
+    display:inline-block;
+    background-color: #ffa600;
+    color: #fff;
+    padding:0 6px;
+    line-height: 16px;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-left: 3px;
+}
+/******高管信息详细信息列表页end*****/
+/****************基本信息 end****************/
+
+/****************财务信息****************/
+.dateSelectBox-cell {
+    position: relative;
+    padding-right: 20px;
+    float: right;
+    border-left:3px solid #f5f5f5;
+}
+.dateSelectBox-cell select {
+    background-color: transparent;
+    margin-bottom: 0;
+    height: 30px;
+    padding:4px 8px;
+    font-size: 14px;
+
+}
+.dateSelectBox-cell .mui-icon-arrowdown {
+    position: absolute;
+    height: 30px;
+    line-height: 30px;
+    width: 28px;
+    text-align: center;
+    top:0;
+    right: 0;
+    color: #999;
+    font-size: 18px;
+}
+.unitBox {
+    padding-right: 20px;
+    padding-left: 8px;
+    float: left;
+    height: 33px;
+    line-height: 30px;
+    border-right:3px solid #f5f5f5;
+}
+.dateSelectBox-cell,.unitBox {
+    width: 50%;
+    border-top:2px solid #ddd;
+    background-color: #fff;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 8px;
+}
+/****************财务信息end****************/
+
+/****************风险信息****************/
+.pr20 {
+    padding-right: 20px;
+}
+.common-nodeBox.pr20 {
+    position: relative;
+    padding-right: 32px;
+}
+.currentNum {
+    padding: 2px 5px;
+    line-height: 12px;
+    background-color: #0f88cb;
+    font-size: 12px;
+    border-radius: 3px;
+    color: #fff;
+    margin-right: 3px;
+    float: none;
+    display:inline-block;
+}
+.inverstC {
+    float: none;
+}
+.common-nodeBox .rightAngle {
+    position: absolute;
+    right: 0;
+    bottom: 16px;
+    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    color: #a6acbc;
+}
+.common-nodeBox .rightAngle a {
+    color: #a6acbc;
+}
+/****************风险信息end****************/
+
+/****************F10****************/
+.hqbj-box {
+    background-color: #fff;
+    margin-bottom: 1px;
+}
+.hq-left-box,.hq-right-box{
+    float: left;
+    width:50%;
+    text-align: center;
+    padding: 6px;
+}
+.classTit {
+    font-weight:normal;
+    font-size: 14px;
+    padding:0 12px;
+    background-color: #fff;
+    height: 30px;
+    line-height: 30px;
+    border-left:4px solid #528098;
+    border-right:4px solid #528098;
+    color: #528098;
+    margin-bottom: 5px;
+    margin-top: 3px;
+    border-top:1px solid #fff;
+    border-bottom:1px solid #fff;
+}
+.classBy {
+    margin-bottom: 14px;
+}
+.classBy .common-nodeBox {
+    margin-bottom: 6px;
+}
+/****************F10 end****************/
+
+/****************echarts表格页面****************/
+/******本日行情*******/
+.todayMarketBox {
+
+    padding: 10px;
+    border-bottom:1px solid #f0f0f0;
+    background-color: #fff;
+}
+.todayMarket {
+    width: 100%;
+
+}
+.todayMarket td {
+    padding:0 8px;
+}
+.updown-name-td {
+    padding-right: 15px;
+    text-align: right;
+}
+.market-num {
+    font-size: 20px;
+}
+.company-code,.company-name {
+    font-size: 16px;
+}
+/******本日行情end*******/
+
+/******行情走势*******/
+.hqzsLp {
+    border-bottom:1px solid #f0f0f0;
+}
+.hqzsLp .tablebox {
+    width: 100%;
+    text-align: center;
+    padding:5px;
+}
+.kLine {
+    margin-top: 10px;
+}
+.search-zqdmBox {
+    height: 34px; margin-top: 4px;
+    margin-bottom: 4px;
+}
+.search-zqdmBox .search-zqdm {
+    border:0;
+    /*box-shadow: 0 0 3px #0c9cd9;*/
+    border-radius:0;
+    border-left:5px solid #ccc;
+    text-align: left;
+
+}
+.kLine .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+    color: #1b92e6;
+    border-color: #1b92e6;
+}
+.kLine .mui-control-content {
+    padding-top:10px;
+}
+/******行情走势end*******/
+
+/*********当前信用评级*********/
+/*.current_score{
+    height:375px;
+}
+.dingliang_pingji,
+.dingxing_pingji{
+    width:50%;
+    height:300px;
+    float: left;
+    text-align: center;
+}
+.current_score .line1{
+    height:75px;
+    width:180px;
+    margin:0 auto;
+    padding:25px 0;
+}
+.current_score .line1>div{
+    float: left;
+}
+.current_score .line1>div.title{
+    font-size:18px;
+}
+.current_score .line1>div.result{
+    font-size:12px;
+    height:18px;
+    line-height:18px;
+    padding:0 15px;
+    color: #fff;
+    background-color: #5ea15c;
+    margin-top:3px;
+    margin-left:30px;
+}
+.current_score .line1>div.result.yiban{
+    background-color: #a1b438;
+}
+.current_score .result_EN{
+    width:110px;
+    height:75px;
+    margin:0 auto;
+    padding:12px 0;
+}
+
+.current_score .result_EN>span.result{
+    font-size:36px;
+    color: #666;
+    font-weight:bold;
+}
+.current_score .result_EN>span.level{
+    font-size:16px;
+    color: #999;
+    margin-left:5px;
+}
+.dingxing_fenshutiao,
+.dingliang_fenshutiao{
+    height:52px;
+    background:url("../img/underLoan_fenshutiao.png") no-repeat center;
+    background-size:100% 100%;
+}
+
+.current_score .dingliang_desc{
+    text-align: justify;
+    padding:20px 24px;
+    color: #666;
+    font-size:12px;
+}
+.current_score .dingliang_desc span{
+    font-size:14px;
+    font-weight:bold;
+}
+.PD_model .panel-body{
+    height:350px;
+}
+.PD_model .panel-body .PD_chart,
+.PD_model .panel-body .PD_label{
+    float: left;
+    height:310px;
+}
+.PD_model .panel-body .PD_chart{
+    width:430px;
+}
+.PD_model .panel-body .PD_label{
+    width:470px;
+    margin-left:30px;
+}
+
+.chartInfo-parent{
+    margin-left:0;
+}
+.chartInfo{
+    width:90px;
+    height:254px;
+    border:1px solid #ddd;
+    text-align:center;
+    font-size:12px;
+    margin-top:5px;
+    float:left;
+}
+.chartInfo.first{
+
+}
+.chartInfo-top{
+    height:94px;
+    background: -ms-linear-gradient(top, #2eb1ef,  #1888c8);        !* IE 10 *!
+    background:-moz-linear-gradient(top,#2eb1ef,#1888c8);!*ç«ç‹*!
+    background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#2eb1ef), to(#1888c8));!*è°·æ­Œ*!
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2eb1ef), to(#1888c8));      !* Safari 4-5, Chrome 1-9*!
+    background: -webkit-linear-gradient(top, #2eb1ef, #1888c8);   !*Safari5.1 Chrome 10+*!
+    background: -o-linear-gradient(top, #2eb1ef, #1888c8);  !*Opera 11.10+*!
+    color:#fff;
+    padding-top:25px;
+}
+.chartInfo-top p:first-child{
+    font-size:20px;
+    font-weight:bold;
+    color:#fff;
+    margin-bottom:5px;
+}
+.chartInfo-middle{
+    height:65px;
+    !*color:#fff;*!
+    border-bottom:1px dashed #999;
+    margin:25px 10px 10px 10px;
+}
+.chartInfo-middle p:first-child{
+    color:#999;
+    margin-bottom:5px;
+}
+.chartInfo-middle .chartInfo-level{
+    font-size:20px;
+    font-weight:bold;
+    color:#a1b437;
+}
+.chartInfo-bottom{
+    color:#999;
+    margin:20px 0 0 0;
+    padding:0 10px;
+}
+.chartInfo-bottom p:first-child{
+    margin-bottom:5px;
+}
+.chartInfo-bottom .chartInfo-date{
+    background-color:#9ABEE6;
+    color:#fff;
+    line-height:20px;
+}
+.selected{
+    border:2px solid #aaaaaa;
+    -webkit-box-shadow:1px 1px 3px #292929;
+    -moz-box-shadow:1px 1px 3px #292929;
+    box-shadow:1px 1px 3px #292929; ;
+}
+.level_history .panel-body{
+    height:600px;
+}*/
+.gradeBox {
+    width:320px;
+    margin:15px auto;
+}
+.gradeBox .dingliang_grade {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+/*********当前信用评级end*********/
+
+/***********成长能力***********/
+.chartTopTable .titTxt,.chartTopTable .numTxt {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 26px;
+}
+.chartTopTable .numTxt {
+    color: #8c8c8c;
+}
+.underChartBox {
+    margin-top: 10px;
+}
+/***********成长能力end***********/
+/*****ZETA*****/
+.textInd {
+    padding:8px;
+}
+.textInd p {
+    font-size: 13px ;
+    line-height: 16px;
+    text-indent: 2em;
+}
+/*****ZETAend*****/
+/****************echarts表格页面end****************/
+
+/******12-28新增跳转模糊查询搜索页面****/
+.mui-title .company_hd_sc {
+    height: 30px;
+    margin: 0;
+    border-radius:3px;
+    background-color: #f4f4f4;
+    border-color:#e2e2e2;
+    font-size: 12px;
+    padding-left: 5px;
+    position: relative;
+    top:-2px;
+}
+.company_hd_sc::-webkit-input-placeholder { /* WebKit browsers */
+    font-size:12px;
+}
+.company_hd_sc:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    font-size:12px;
+}
+.company_hd_sc::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-size:12px;
+}
+.company_hd_sc:-ms-input-placeholder { /* Internet Explorer 10+ */
+    font-size:12px;
+}
+.mui-bar.mui-bar-nav .hd_sc_qd {
+    line-height: 26px;
+    padding-left: 6px;
+    font-size: 14px;
+    padding-right: 6px;
+}
+.matchCompany_num {
+    line-height: 30px;
+    padding-left: 12px;
+    color: #454545;
+    font-size: 12px;
+}
+.matchCompany_num .icon-jieshao {
+    margin-right: 6px;
+}
+.fwBold {
+    font-weight:bold;
+}
+.searchCompany_rsCell {
+    background-color: #fff;
+    padding-left: 15px;
+    margin-bottom: 8px;
+}
+.leftCompanyIco {
+    display:block;
+    width: 32px;
+    height: 32px;
+    border-radius:3px;
+    color: #fff;
+    line-height: 32px;
+    text-align: center;
+    font-size: 16px;
+}
+.bc_red {
+    background-color: #ef3b39;
+}
+.bc_orange {
+    background-color: #fd7f2d;
+}
+.bc_yellow {
+    background-color: #ffcb20;
+}
+.bc_green {
+    background-color: #4ccb44;
+}
+.bc_cyan{
+    background-color: #41b1c2;
+}
+.bc_blue {
+    background-color: #157df3;
+}
+.bc_purple {
+    background-color: #9b49fe;
+}
+.bc_cyan2 {
+    background-color: #85b0f2;
+}
+.companysname {
+    padding:10px 0;
+    line-height: 14px;
+    font-size: 12px;
+    color: #9e9e9e;
+    border-top:1px solid #e0e0e0;
+}
+.rightCompanyInfo {
+    width: 100%;
+    padding-left: 40px;
+    margin-left: -34px;
+
+}
+.info_cnameBox {
+    position: relative;
+    padding:10px;
+    padding-left: 0;
+    padding-right: 15px;
+    border-bottom:1px solid #e0e0e0;
+}
+.chooseC {
+    background: linear-gradient(to bottom right,#68c0b0,#0c9cd9);
+   /* padding: 5px 8px;*/
+    color: #fff;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    width: 40px;
+    text-align: center;
+    border-radius:3px;
+}
+.info_cname {
+    width: 100%;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding-right: 50px;
+    margin-right: -40px;
+    line-height: 24px;
+    height: 24px;
+    font-size: 14px;
+    color: #202020;
+
+}
+.leftCompanyIcoBox {
+    margin-top: 7px;
+}
+.info_fddbr {
+    border: 0;
+    color: #737373;
+    font-size: 13px;
+}
+.info_fddbr .info_cname {
+    font-size: 13px;
+    color: #737373;
+}
+.companysname .icon-huaxiangfenxi1 {
+    font-size: 13px;
+}
+.matchCompanyBox {
+    width: 100%;
+    display: none;
+}
+
+/******12-28新增跳转模糊查询搜索页面end****/
+
+
+/*12-29新增搜索历史*/
+.search_historyBox .search_tit{
+    margin-top: 2px;
+    background-color: #fff;
+    text-align: center;
+    font-size:12px;
+    color: #9e9e9e;
+    line-height: 38px;
+    border-bottom:1px solid #f3f3f3;
+}
+.search_tit .fa-clock-o {
+    font-size: 16px;
+}
+.search_history_ul {
+    background-color: #fff;
+    padding:0 14px;
+  /*  height: 225px;*/
+    overflow: auto;
+}
+.search_history_cell {
+    padding:10px 0;
+    font-size: 13px;
+    line-height: 24px;
+    border-bottom:1px solid #f3f3f3;
+}
+.clearAllHistory {
+    width: 100%;
+    line-height: 50px;
+    font-size: 16px;
+    color: #202020;
+    text-align: center;
+} 
+.clearAllHistory .fa-trash-o {
+    color: #5b5b5b;
+}
+
+
+
+/***************1-21公司详情页新增股东和董监高***************/
+.gdDjg {
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+.gddjg_leftLabel {
+    display:table;
+    vertical-align: middle;
+    font-size: 12px;
+    width: 18px;
+    height: 70px;
+    line-height: 18px;
+    background-color: #e8f8fe;
+    text-align: center;
+}
+.gddjg_leftLabel span {
+    display: table-cell;
+    color: #1bbdf1;
+    vertical-align: middle;
+}
+.gddjg_rightCon {
+    width: 100%;
+    padding-left: 18px;
+    margin-left: -18px;
+}
+.shareholder {
+    margin-bottom: 4px;
+}
+
+.dongjiangao  .gddjg_leftLabel span {
+    display: table-cell;
+    color: #5492ef;
+    vertical-align: middle;
+}
+.dongjiangao .gddjg_leftLabel {
+    background-color: #eef4fd;
+}
+.gd-cell {
+    float: left;
+    width: 33.33%;
+    padding-left:5px;
+}
+.gddjg_rightCon_list_node {
+    display:block;
+    width: 100%;
+    height: 70px;
+    border-radius:4px;
+    background-color: #f4f4f4;
+    padding-top: 5px;
+}
+.gddjg_name {
+    display: block;
+    position: relative;
+    padding:4px 0;
+    padding-left: 46px;
+    height: 42px;
+}
+.gddjg_left_head_img {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 3px;
+    overflow: hidden;
+    line-height: 32px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    top: 4px;
+    left: 8px;
+}
+.gddjg_left_head_img img {
+    width: 100%;
+}
+.gddjg_fullname {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 16px;
+    font-size: 10px;
+    color: #1d8fe1;
+    line-height: 12px;
+}
+.gddjg_id {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 14px;
+    font-size: 10px;
+    color: #666;
+    line-height: 14px;
+}
+.gddjg_id_bd {
+    display: block;
+    float: left;
+    width: auto;
+    padding: 2px;
+    line-height: 10px;
+    font-size: 10px;
+    border: 1px solid #f3564d;
+    color: #f3564d;
+    border-radius: 2px;
+}
+.gddjg_person_details {
+    padding:0 8px;
+}
+.gddjg_person_details span{
+    font-size: 10px;
+    line-height: 14px;
+    color: #666;
+    display: block;
+}
+.gddjg_person_details .text_red {
+    color: #f3564d;
+}
+.gddjg_rightCon_list_box {
+    height: 70px;
+}
+
+/***************1-21公司详情页新增股东和董监高 end***************/
+
+.infozt-biddingTit {
+    border:1px solid #7ac9c1;
+    color: #7ac9c1;
+    margin-left: 8px;
+}
+
+/*公司详情页 发票抬头弹框*/
+.invoiceTit-pop {
+    width: 100%;
+    height: 100%;
+    background-color: #eef1f3;
+    border-radius:4px;
+
+    height: 480px;/*1-26改*/
+    overflow: auto;
+    padding-bottom: 20px;
+}
+.invoiceTit-hd {
+    height: 76px;
+    line-height: 76px;
+    text-align: center;
+    color: #333;
+    font-weight:bold;
+    background-color: transparent;
+    font-size: 24px;
+}
+.invoiceTit-part {
+    padding: 16px 25px;
+    background-color: #fff;
+    margin-bottom: 12px;
+}
+.invoiceTit-part-node {
+    display:table;
+}
+.invoiceTit-part-node label {
+    display:table-cell;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight:bold;
+    color: #333;
+}
+.invoicePop_right_txt {
+    display:table-cell;
+    color: #333;
+    font-size: 14px;
+    line-height: 20px;
+}
+.invoiceTit-part .invoiceTit-part-node:nth-of-type(odd){
+    padding-bottom: 18px;
+}
+.invoiceTit-part2 label {
+    width: 72px;
+}
+.invoice-pop-prompt {
+    font-size: 12px;
+    line-height: 22px;
+    color: #666;
+    margin-bottom: 18px;
+    text-align: center;
+    width: 100%;
+}
+.invoice-pop-btns {
+    padding:0 25px;
+}
+.invoice-pop-btn-cancel,.invoice-pop-btn-save {
+    padding:0 10px;
+    min-width: 118px;
+    text-align: center;
+    height: 46px;
+    line-height: 46px;
+    box-shadow: none;
+    border-radius:4px;
+    border:0;
+}
+.invoice-pop-btn-cancel {
+    background-color: #bbbbbb;
+    color: #333;
+    font-size: 14px;
+}
+.invoice-pop-btn-save {
+    background-color: #1d8fe1;
+    color: #fff;
+}
+/*公司详情页 发票抬头弹框 end*/
+
+.input[type=search] {
+    background-color: transparent;
+}

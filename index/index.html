@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--<link rel="stylesheet" type="text/css" href="../css/icons-extra.css">-->
+		<link rel="stylesheet" href="../css/app.css">
+		<link rel="stylesheet" href="../css/company.css">
+		<link rel="stylesheet" href="../css/zxapp.css">
+		<style>
+			#sliderProgressBar {
+            position: fixed;
+            top: 37px;
+            z-index: 100;
+        }
+       .mui-content. .headfixed {
+         position: fixed!important;
+            top: 0;
+            left: 0;
+        }
+        .mui-slider-indicator.mui-segmented-control {
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-bottom:1px solid #c8c7cc;
+            background-color: #fff;
+            z-index: 100;
+            box-shadow: 0 0 10px #aaa;
+        }
+        .mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+            border-top: 0;
+
+        }
+        .mui-segmented-control a.mui-control-item {
+            color: #666!important;
+        }
+        .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+            color: #000!important;
+        }
+        .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+            background-color: #000;
+            height: 1px;
+        }
+        .mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+            border-bottom: 0;
+        }
+
+        /*slider style change*/
+        #sliderProgressBar {
+            top: 47px;
+        }
+        .mui-segmented-control .mui-control-item {
+            line-height: 48px;
+            height: 48px;
+        }
+        /*slider style change end*/
+       .timeBox{
+       		width: 70px;
+       }
+       /*只显示一行多余的显示...*/
+       .zx_txt{
+        	overflow:hidden;
+			text-overflow:ellipsis;
+			-o-text-overflow:ellipsis;
+			white-space:nowrap;
+			width:100%;
+        }
+        /************暂无相关数据begain**************************/
+		.waiteimgBox {
+		    position: absolute;
+		    top: 90%;
+		    width: 100%;
+		    left: 0;
+		    text-align: center;
+		    height:300px;
+		    margin-top:-150px;
+		}
+		.icon-jingqingqidai {
+		    font-size: 100px;
+		    line-height: 140px;
+		}
+/************暂无相关数据end**************************/
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<header class="mui-bar mui-bar-nav registerhd">
+				<h1 id="title" class="mui-title">推送信息</h1>
+				<a class="mui-icon mui-icon-search mui-pull-right" style="color: #fff;" href="../search/search.html"></a>
+			</header>
+			<div class="mui-content" style="padding-top: 83px;" id="pullrefresh">
+				<!--资讯-->
+				<div class="zixun_conBox">
+					<!--信息类型&群组筛选-->
+					<div class="xxqzFilter">
+						<ul class="dropF_hd">
+							<li class="dropF_hdcell halfWidth">
+								<span id="xxlx_txt">信息类型</span>
+								<span class="triangle_ico "></span>
+							</li>
+							<li class="dropF_hdcell halfWidth">
+								<span id="qunz_txt">群组</span>
+								<span class="triangle_ico"></span>
+							</li>
+						</ul>
+						<div class="dropF_con">
+							<div class="dropF_conCell dropF1_conCell">
+								<ul class="xxlx-ul">
+									<li class="xxlxCell all_xxlx actived" data-ripple @tap="getAllInfo()">
+										<span>全部</span>
+									</li>
+									<li v-for="item in items" data-ripple class="xxlxCell" @tap="getInfo(item.index)">
+										<span>{{item.value}}</span>
+									</li>
+								</ul>
+							</div>
+							<!--群组筛选-->
+							<div class="dropF_conCell dropF2_conCell">
+								<ul class="xxlx-ul">
+									<li class="xxlxCell all_xxlx actived" data-ripple @tap="getAllGroup()">
+										<span>全部</span>
+									</li>
+									<li v-for="group in groups" class="xxlxCell " data-ripple @tap="getGroup(index)">
+										<span>{{group.value}}</span>
+									</li>
+								</ul>
+							</div>
+							<div class="bottomBtn">
+									<span class="resetsec" data-ripple @tap="reset()">重置</span>
+									<span class="sureBtn" data-ripple @tap="confirm()">确定</span>
+							</div>
+							<!--群组筛选 end-->
+						</div>
+						<div class="bcShadeBox"></div><!--遮罩---点击信心类型和群组选择出现遮罩-->
+					</div>
+					<!--信息类型&群组筛选 end-->
+
+					<!--资讯内容-->
+					<div class="zixunCon">
+						<ul class="companyNews">
+							<li v-for="(value,index) in pushlist" class="companyNewsCell">
+								<div class="companyNewsNode">
+									<span class="circleNode">{{value.dataList.length}}</span>
+									<div class="companyNameBox">
+										<a href="../company/companyDetails.html" class="companyNameTxt">{{value.companyname}}</a>
+										<i class="timeBox">{{value.infodate |formatDateYR}}</i><!--获取时间加调用过滤函数formatDateYR-->
+									</div>
+									<!--公告、资讯，最多展示两条-->
+									<div class="twozxbox">
+										<a v-for="(detailvalue,detailindex) in value.dataList" v-if="detailindex<=1" href="infotxt.html" class="zx_box">
+											<h5 class="zx_tit txt_pr96">
+												<span>{{detailvalue.title}}</span>
+												<i class="rightLab bc_green">{{detailvalue.state | switchNum(detailvalue.state)}}</i>
+											</h5>
+											<div class="zx_txt txt_pr96" style="max-height: 24px;">
+												<span>{{detailvalue.remark}}</span>
+											</div>
+										</a>
+									</div>
+									<!--公告、资讯，最多展示两条 end-->
+								</div>
+								 <!--查看全部-->
+								 <!--点击事件带参数---打开新页面，新页面地址checkAllInfo.html、新页面IDcheckAllInfo、自定义参数可以用来处理页面传值{data:value}-->
+			                    <a @tap="lookMore('checkAllInfo.html','checkAllInfo',{data:value})" class="checkAllInfo" v-if="value.dataList.length>2">
+			                        查看{{value.infodate}}新增{{value.dataList.length-2}}条
+			                        <i class="mui-icon mui-icon-arrowright"></i>
+			                    </a>
+                    <!--查看全部 end-->
+							</li>
+						</ul>
+					</div>
+					<!--资讯内容 end-->
+				
+				</div>
+				<!--资讯 end-->
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/app.js"></script>
+		<!--<script src="../js/jquery-1.11.3.min.js"></script>-->
+		<script src="../js/common.js"></script>
+		<script src="../js/vue.js"></script>
+		<script src="index.js"></script>
+
+		<script type="text/javascript">
+			//获取设备高度
+			var winheight = window.screen.availHeight;
+			/*设置高度*/
+			document.getElementsByClassName("bcShadeBox")[0].style.height = (winheight - 80) + 'px';
+
+			/***筛选下拉框显示、隐藏***/
+			function closeDropdownBox() {
+				document.getElementsByClassName("dropF_con")[0].style.height = '0px';//信息类型，群组的容器高度为0，即隐藏
+				document.getElementsByClassName("bcShadeBox")[0].classList.remove('actived');//移除信息类型，群组的选中样式
+				mui('.dropF_hdcell')[0].classList.remove('actived');//移除信息类型列表的选中样式
+				mui('.dropF_hdxiancell')[1].classList.remove('actived');//移除群组列表的选中样式
+			}
+			/*点击半透明背景隐藏下拉框*/
+			mui('body').on('tap', '.bcShadeBox ', function() {
+				closeDropdownBox()//点击.bcShadeBox遮罩调用closeDropdownBox()函数
+			});
+
+			/*点击信息类型或群组*/
+			mui('body').on('tap', '.dropF_hdcell', function() {//点击信息类型或群组r
+				var id = document.getElementsByTagName('body')[0];//申明变量id为body的变量
+				var liS = document.getElementsByClassName('dropF_hdcell');//申明变量lis为dropF_hdcell类
+				for(var j = 0; j < liS.length; j++) {//循环dropF_hdcell类
+					liS[j].index = j;		//将循环出的每个dropF_hdcell类的下标赋值给j（纯js写法，因纯js不像jquery可以点击直接获取下标，因此for循环方法获取每项下标）
+				}
+				var index_ = this.index;//申明index_等于this.index
+				 /*如果当前actived 收起下拉框*/
+				if(this.classList.contains('actived')) {//判断--如果所点击的有active选中样式，
+					this.classList.remove('actived');//则移除active选中样式
+					document.getElementsByClassName("dropF_con")[0].style.height = '0px';//信息类型，群组的容器高度为0，即隐藏
+					document.getElementsByClassName("bcShadeBox")[0].classList.remove('actived');//移除信息类型，群组的选中样式
+				} else { /*下拉框显示*/
+
+					/*tab切换*/
+					function changeTab() {
+						var len = mui('.dropF_hdcell').length;//申明变量len为.dropF_hdcell的长度
+						for(var i = 0; i < len; i++) {//for循环
+							mui('.dropF_hdcell')[i].classList.remove('actived');//移除下标相同的dropF_hdcell，dropF_conCell，选中样式
+							mui('.dropF_conCell')[i].classList.remove('actived');
+						}
+						mui('.dropF_conCell')[index_].classList.add('actived');
+					};
+					changeTab();
+					/*tab切换end*/
+					document.getElementsByClassName("dropF_con")[0].style.height = '248px';
+					document.getElementsByClassName("bcShadeBox")[0].classList.add('actived');
+					this.classList.add('actived');
+				}
+			});
+
+			/*选择选项*/
+			function selectType(dropX) {
+				mui(dropX).on('tap', '.xxlxCell', function() { /*all_xxlx*/
+					/*判断是否为全部*/
+					var this_ = this;
+					var len = mui(dropX + ' .xxlxCell').length;
+					if(this.classList.contains('all_xxlx')) { /*为全部*/
+						for(var i = 0; i < len; i++) {
+							mui(dropX + ' .xxlxCell')[i].classList.remove('actived');
+						}
+						this.classList.add('actived'); /*xxlx_txt  qunz_txt*/
+						/*mui('#xxlx_txt')[0].innerHTML='项目类型';*/
+					} else {
+						/*判断是否已被选中*/
+						if(this.classList.contains('actived')) {
+							this.classList.remove('actived');
+							/******遍历dropF1_conCell 下的 xxlxCell ，当xxlxCell全部都不被选中，则选中‘全部’*******/
+							var len2 = mui(dropX + ' .xxlxCell').length;
+							var num = 0;
+							for(var j = 0; j < len2; j++) {
+								if(mui(dropX + ' .xxlxCell')[j].classList.contains('actived')) {
+									num++;
+								}
+							}
+							if(num == 0) {
+								mui(dropX + ' .all_xxlx')[0].classList.add('actived');
+							}
+
+						} else {
+							mui(dropX + ' .all_xxlx')[0].classList.remove('actived');
+							for(var i = 0; i < len; i++) {
+								mui(dropX + ' .xxlxCell')[i].classList.remove('actived');
+							}
+							this.classList.add('actived');
+							
+							//$(this).siblings().removeClass("actived");
+						}
+						/******遍历dropF1_conCell 下的 xxlxCell ，当xxlxCell全部都不被选中，则选中‘全部’ end ******/
+
+						/*   var spanTxt = this.getElementsByTagName("span")[0].innerHTML+' ';
+						   var xxlx_txt = mui('#xxlx_txt')[0].innerHTML;
+						   mui('#xxlx_txt')[0].innerHTML=xxlx_txt+spanTxt;*/
+
+					}
+				});
+
+				/*点击重置按钮*/
+				mui(dropX).on('tap', '.reset', function() {
+
+					var len2 = mui(dropX + ' .xxlxCell').length;
+					for(var j = 0; j < len2; j++) {
+						mui(dropX + ' .xxlxCell')[j].classList.remove('actived');
+					}
+					mui(dropX + ' .all_xxlx')[0].classList.add('actived');
+				});
+				/*点击重置按钮 end*/
+
+				/*点击确定按钮*/
+				mui('.dropF_conCell').on('tap', '.confirm', function() {
+					closeDropdownBox(); /*关闭下拉框*/
+				})
+				/*点击确定按钮 end*/
+			}
+			/*选择选项 end*/
+
+			/******信息类型******/
+			selectType('.dropF1_conCell ');
+			/******信息类型 end******/
+
+			/******群组******/
+			selectType('.dropF2_conCell ');
+			/******群组 end******/
+		</script>
+
+		<script src="../js/ripple.js"></script>
+		<script>
+			// just add effect to elements
+			Array.prototype.forEach.call(document.querySelectorAll('[data-ripple]'), function(element) {
+				// find all elements and attach effect
+				new RippleEffect(element); // element is instance of javascript element node
+			});
+		</script>
+
+	</body>
+
+</html>
